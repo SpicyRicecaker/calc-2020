@@ -16,31 +16,7 @@
         margin: 0 auto;
         line-height: 2rem;
       "
-      onMouseOver="(async function b(){
-
-      document.getElementById('wrapper').setAttribute('onMouseOver', '');
-
-      let currentHue= 0; const hue = 255/2; 
-
-      let name = document.getElementById('name'); 
-
-      const delay = (time) => {
-      return new Promise((res) => {
-        setTimeout(res, time);
-      })}
-
-      const change = () => {
-        return new Promise((res) => {
-        name.style.color = `hsl(${hue*Math.sin(currentHue)+hue},100%,50%)`; 
-        currentHue+=Math.PI/8; 
-        res();
-      })} 
-
-      (async function run () {
-      await change().then(() => delay(2000)).then(()=> run());
-      })();
-
-      })();"
+      onMouseOver="(async function b(){ document.getElementById('wrapper').setAttribute('onMouseOver', ''); let currentHue= 0; const hue = 255/2; let name = document.getElementById('name'); const delay = (time) => { return new Promise((res) => { setTimeout(res, time); })}; const change = () => { return new Promise((res) => { name.style.color = `hsl(${hue*Math.sin(currentHue)+hue},100%,50%)`; currentHue+=Math.PI/8; res(); })}; (async function run () { await change().then(() => delay(2000)).then(()=> run()); })(); })();"
     >
       <hr />
       <div
@@ -53,8 +29,7 @@
       >
         Hello, I'm
         <span id="name" style="color: hsl(0, 100%, 50%); transition: 2s"
-          >Andy</span
-        >
+          >Andy</span>
       </div>
       <div style="font-family: Arial; padding: 0rem 2rem 0rem">
         and I’m just a boy.
@@ -123,8 +98,7 @@
         Source code
         <a
           href="https://github.com/SpicyRicecaker/stu-dying-2020/blob/master/calc-2020/disc-intro/index.html"
-          >here</a
-        >
+          >here</a>
         hehe
       </div>
     </div>
