@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Suggested Homework Problem 1}
+\author{by Shengdong Li}
+\date{20 September 2020}
+\maketitle
+
+$$
+  \int_{ }^{ }\left(t+4\right)^{3}dt
+$$
+
+\begin{align}
+  \intertext{Let's begin by defining $u$ and $du$}
+  u&=t+4\\
+  du&=dt
+  \intertext{Subsitute the values in}
+  \int_{ }^{ }\left(t+4\right)^{3}dt&=\int_{ }^{ }u^{3}du
+  \intertext{Integrate and replug}
+  &=\frac{1}{4}u^{4}\\
+  &=\frac{1}{4}\left(t+4\right)^{4}
+  \intertext{Add $C$!}
+  &=\boxed{\frac{1}{4}\left(t+4\right)^{4}+C}
+\end{align}
+\end{document}
