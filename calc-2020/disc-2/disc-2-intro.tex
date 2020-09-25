@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathtools}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Initial Post}
+\author{by Shengdong Li}
+\date{24 September 2020}
+\maketitle
+
+\section{Solving $\int\frac{dx}{x^2+10x+25}$}
+
+\begin{align}
+  \intertext{first factor}
+  \int\frac{dx}{x^2+10x+25}
+     & =\int\frac{dx}{\left(x+5\right)^2} \\
+  \intertext{$u$-sub}
+  u  & = x+5                              \\
+  du & = dx                               \\
+     & =\int\frac{du}{u^2}                \\
+  \intertext{then integrate}
+     & =\frac{u^{-1}}{-1}+C               \\
+     & =\boxed{-\frac{1}{x+5}+C}
+\end{align}
+
+\setcounter{equation}{0}
+
+\section{Solving $\int\frac{xdx}{x^2+10x+25}$}
+\begin{align}
+  \intertext{first factor}
+  \int\frac{xdx}{x^2+10x+25} & =\int\frac{xdx}{\left(x+5\right)^2}                             \\
+  \intertext{$u$-sub}
+  u                          & =x+5                                                            \\
+  u-5                        & =x                                                              \\
+  du                         & = x                                                             \\
+                             & = \int\frac{u-5}{u^2}du                                         \\
+  \intertext{simplify}
+                             & = \int\frac{1}{u}-5\int\frac{1}{u^2}                            \\
+  \intertext{then integrate}
+                             & = \ln{u} - 5\left(\frac{u^{-1}}{-1}\right)                      \\
+                             & = \ln{u} + 5\left(\frac{1}{u}\right)                            \\
+                             & = \boxed{\ln{\left(\left|x+5\right|\right)} + \frac{5}{x+5} +C}
+\end{align}
+
+\setcounter{equation}{0}
+
+\section{Solving $\int\frac{dx}{\left(x+5\right)^2\left(x-3\right)}$}
+\begin{align}
+  \intertext{First define the general form of the partial fraction decomposition...}
+  \frac{1}{(x+5)^2(x-3)}            & = \frac{A}{x+5}+\frac{B}{\left( x+5 \right)^2}+\frac{C}{x-3}
+  \intertext{Next multiply both sides}
+  1                                 & = A\left( x+5 \right)\left( x-3 \right) + B\left( x-3 \right) + C\left( x+5 \right)^2                                 \\
+  \intertext{Now plugin $x$ values to solve for easy values}
+  x                                 & = -5                                                                                                                  \\
+  1                                 & = -8B                                                                                                                 \\
+  \Aboxed{B                         & =-\frac{1}{8}}                                                                                                        \\
+  x                                 & = 3                                                                                                                   \\
+  1                                 & = 64C                                                                                                                 \\
+  \Aboxed{C                         & = \frac{1}{64}}
+  \intertext{Solve for the remaining $A$ value by plugging everything in}
+  x                                 & = 0                                                                                                                   \\
+  1                                 & = A\left( 5 \right)\left( -3 \right) + B\left( -3 \right) + C\left( 5 \right)^2                                       \\
+  1                                 & = -15A - \left( -\frac{1}{8} \right)\left( 3 \right) + 23 \left( \frac{1}{64} \right)                                 \\
+  1 - \frac{25}{64} - \frac{24}{64} & = -15A                                                                                                                \\
+  \frac{15}{64}                     & = -15A                                                                                                                \\
+  \Aboxed{A                         & =-\frac{1}{64}}
+  \intertext{Now we can write the new fractions}
+                                    & = -\frac{1}{64}\int\frac{1}{x+5}dx-\frac{1}{8}\int\frac{B}{\left( x+5 \right)^2}dx+\frac{1}{64}\int\frac{C}{x-3}dx
+  \intertext{\textbf{Focus on $-\frac{1}{8}\int\frac{B}{\left( x+5 \right)^2}dx$}}
+  u                                 & = 5                                                                                                                   \\
+  du                                & = 0                                                                                                                   \\
+                                    & = \int u^{-2}                                                                                                         \\
+                                    & = \frac{u^-1}{-1}                                                                                                     \\
+                                    & = - \frac{1}{x+5}                                                                                                     \\
+  \intertext{Now integrate the others and plugin}
+                                    & = -\frac{1}{64}\ln\left( \left|x+5\right| \right)+\frac{1}{x+5}+\frac{1}{64}\ln\left( \left|x-3\right| \right)
+  \intertext{Simplify}
+                                    & = \frac{1}{64}\left( \ln\left( \left|x-3\right| \right) - \ln\left( \left|x+5\right| \right)\right)+\frac{1}{x+5} + C \\
+                                    & = \boxed{\frac{1}{64}\ln\left(\frac{x-3}{x+5}\right)+\frac{1}{x+5} + C}
+\end{align}
+
+\setcounter{equation}{0}
+
+\section{Solving for $\int\frac{x^3dx}{4x^2-1}$}
+\begin{align}
+  \intertext{rearrange function}
+              & =\int\frac{\left(x\right)\left(x^2\right)}{4x^2-1}dx
+  \intertext{then $u$-sub basically makes this problem a breeze}
+  u           & = 4x^2-1                                                                            \\
+  u + 1       & = 4x^2                                                                              \\
+  x^2         & =\frac{1}{4}\left( u + 1 \right)                                                    \\
+  du          & = 8xdx                                                                              \\
+  \frac{1}{8} & =xdx                                                                                \\
+              & =\int\frac{\left(\frac{1}{8}du\right)\left(\frac{1}{4}\left(u+1\right)\right)}{u}dx \\
+              & =\frac{1}{32}\int\frac{u+1}{u}du                                                    \\
+              & = \frac{1}{32}\left( \int du + \int\frac{1}{u}du \right) +C                         \\
+              & = \frac{1}{32}\left(u + ln\left( \left| u\right| \right)\right) +C                  \\
+              & = \frac{1}{32}\left(4x^2-1 + ln\left( \left| 4x^2-1\right| \right)\right) +C        \\
+              & = \boxed{\frac{1}{32}\left(4x^2 + ln\left( \left| 4x^2-1\right| \right)\right) +C}
+\end{align}
+
+\end{document}
