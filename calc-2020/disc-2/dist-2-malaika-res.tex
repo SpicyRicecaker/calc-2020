@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Malaika Shah}
+\author{by Shengdong Li}
+\date{25 September 2020}
+\maketitle
+
+\section{About the equation editor}
+Hey Malaika, thanks for replying to my post!
+
+I'm \textit{very} glad that you asked asked me about my equation editor. You see, I made a \href{https://youtu.be/iH12bU1XLrk}{video} on this topic a while back talking about the downsides of the Canvas equation editor and why you should use the fullblown latex language instead. In it, I give a quick introduction to Latex and its semantics and demonstrate my workflow solving an integral using Desmos and a text editor. TL;DR, try \href{https://www.overleaf.com/}{Overleaf} to get a feel for Latex.
+
+The setup I'm currently using is \href{https://code.visualstudio.com/}{VSCode} as my text editor with the Latex Workshop extension, but it requires the installation of a LaTex distribution which can take a lot of time. You might want to try this option if you already have an offline text editor that you like. Here's the \href{https://www.latex-project.org/get/}{download page} if you're interested.
+
+\section{Concering the 4th problem}
+
+I think that the way that you solved the $4$th problem via long dividing the $\frac{x^{3}}{4x^{2}-1}$ and then solving for each individual piece of the resulting $\frac{1}{4}\int_{ }^{ }xdx$ and $\frac{1}{4}\int_{ }^{ }\frac{x}{4x^{2}-1}dx$ is definitely a valid approach to solve the problem.
+
+One statement that you made that I found really interesting was that for you, when you saw that the $x$s are only $1$ power apart you went to long divison. For me, I first saw that the combined values of the $u$ and $du$ values in terms of $x$ had an equal power to the numerator, and so I tried $u$-sub first! I oftentimes forget that long division is always a solid way to solve a problem given an improper fraction, so I think that seeing your comment and thought process is helpful.
+
+Anyways, thanks for replying again, I wish you luck on your journey to find a better alternative to the Canvas equation editor!
+\end{document}
