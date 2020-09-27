@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{hyperref}
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     filecolor=magenta,      
+%     urlcolor=cyan,
+% }
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15pt}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Brian Chou}
+\author{by Shengdong Li}
+\date{26 September 2020}
+\maketitle
+
+\section{Intro}
+Hey Brian, great job with the initial post! The equation editor that you used made it really clear and easy to follow every step of the post.
+
+For both problems number 1 and 2, we both used $u$-sub to solve the problem, but I've noticed that coincidentally, they can both also be solved using partial fraction decomposition. So I was wondering, is partial fraction decomposition good or bad for solving these problems?
+
+\section{Solving $\int_{ }^{ }\frac{dx}{x^{2}+10x+25}$ via decomp}
+
+\begin{align}
+  \intertext{First we factor the bottom}
+  \int_{ }^{ }\frac{dx}{x^{2}+10x+25} & = \int_{ }^{ }\frac{dx}{\left(x+5\right)^{2}} \\
+  \intertext{Then we can define the decomposed fraction form}
+  \frac{1}{\left(x+5\right)^{2}}      & =\frac{A}{x+5}+\frac{B}{\left(x+5\right)^{2}} \\
+  \intertext{Plugin values to solve}
+  1                                   & =A\left(x+5\right)+B                          \\
+  x                                   & =-5                                           \\
+  1                                   & =0+B                                          \\
+  B                                   & =1                                            \\
+  x                                   & =0                                            \\
+  1                                   & =5A+1                                         \\
+  5A                                  & =0                                            \\
+  A                                   & =0                                            \\
+  \intertext{Plugin solved values to integral (We get the exact same integral we started with)}
+                                      & =\int_{ }^{ }\frac{1}{\left(x+5\right)^{2}}dx
+  \intertext{Now we have to stop stalling and we're forced to $u$-sub}
+  u                                   & =x+5                                          \\
+  du                                  & =dx                                           \\
+                                      & =\int_{ }^{ }\frac{1}{u^{2}}du                \\
+                                      & =\int_{ }^{ }u^{-2}du                         \\
+  \intertext{Into integration}
+                                      & =\frac{u^{-1}}{-1}+C                          \\
+                                      & = \boxed{-\frac{1}{x+5}+C}
+\end{align}
+
+\setcounter{equation}{0}
+
+\section{Solving $\int_{ }^{ }\frac{xdx}{x^{2}+10x+25}$ via decomp}
+
+\begin{align}
+  \intertext{we first have to factor again}
+  \int_{ }^{ }\frac{xdx}{x^{2}+10x+25} & =\int_{ }^{ }\frac{xdx}{\left(x+5\right)^{2}}
+  \intertext{then define the decomposed form}
+  \frac{x}{\left(x+5\right)^{2}}       & =\frac{A}{x+5}+\frac{B}{\left(x+5\right)^{2}}
+  \intertext{then plugin values to solve}
+  x                                    & =A\left(x+5\right)+B                                                       \\
+  x                                    & =-5                                                                        \\
+  B                                    & =-5                                                                        \\
+  x                                    & =0                                                                         \\
+  0                                    & =5A+B                                                                      \\
+  0                                    & =5A+-5                                                                     \\
+  5                                    & =5A                                                                        \\
+  A                                    & =1                                                                         \\
+  \intertext{Now we get a resulting integral that looks a lot like what we would've gotten if we used $u$-sub to split the fraction up in the first place. We can then integrate to solve...}
+                                       & =\int_{ }^{ }\frac{1}{x+5}dx-5\int_{ }^{ }\frac{1}{\left(x+5\right)^{2}}dx
+  \intertext{Here we can actually just plugin our answer from the previous problem}
+                                       & =\ln\left(\left|x+5\right|\right)-5\left(-\frac{1}{x+5}+C\right)           \\
+                                       & =\ln\left(\left|x+5\right|\right)+\frac{5}{x+5}-5C                         \\
+                                       & =\boxed{\ln\left(\left|x+5\right|\right)+\frac{5}{x+5}+C}
+\end{align}
+
+\section{In conclusion...}
+In terms of pure complexity, the partial fraction decomposition in both problems added a whole bunch of steps made up of algebra to solve for the terms, so it's a lot less convenient than $u$-sub. 
+
+In the first problem partial fraction decomp didn't even help at all because the problem could not be factored further. However, the process of solving the second problem I found very interesting. First, midway through solving the problem, the resulting $\int_{ }^{ }\frac{1}{x+5}dx-5\int_{ }^{ }\frac{1}{\left(x+5\right)^{2}}dx$ was actually the exact same as the $\int_{ }^{ }\frac{1}{u}du-5\int_{ }^{ }\frac{1}{u^{2}}du$ from $u$-sub. Second, the $\int_{ }^{ }\frac{xdx}{\left(x+5\right)^{2}}$ was the exact same problem and fraction as the first problem. I think that this may give a clue on how rational fractions are broken down?????
+\end{document}
