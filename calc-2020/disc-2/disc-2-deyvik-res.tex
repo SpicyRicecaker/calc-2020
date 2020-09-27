@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{polynom}
+% \usepackage{hyperref}
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     filecolor=magenta,      
+%     urlcolor=cyan,
+% }
+
+\usepackage{fancyhdr}
+% \setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Deyvik Bhan}
+\author{by Shengdong Li}
+\date{27 September 2020}
+\maketitle
+
+\section{Intro}
+Hey Deyvik, great job with the initial post!
+
+For the problem in set B in my initial post, I also solved it in the same way as you, using $u$-sub with $u=4x^2-1$. One thing I've realized recently is that you can also use partial fraction decomposition to solve the problem. While it is definitely more complex and less efficient than $u$-sub straight from the beginning, I noticed some interesting parallels between both methods as I solved the problem.
+
+
+\section{Solving $\int_{ }^{ }\frac{x^{3}}{4x^{2}-1}dx$}
+The fraction is improper, so we first have to divide it
+
+\begin{equation}
+  \polylongdiv{x^3}{4x^2-1}
+\end{equation}
+\begin{align}
+  \intertext{The resulting quotient and remainder gives us the two following integrals...}
+  &=\int_{ }^{ }\frac{1}{4}xdx+\int_{ }^{ }\frac{\frac{1}{4}x}{4x^{2}-1}dx\\
+  \intertext{We can immediately solve the first integral, and factor the second}
+  &=\frac{1}{8}x^{2}+\frac{1}{4}\int_{ }^{ }\frac{x}{4x^{2}-1}dx\\
+  \intertext{\textbf{Focusing on $\frac{1}{4}\int_{ }^{ }\frac{x}{4x^{2}-1}dx$} we can start with $u$-sub}
+  u&=4x^{2}-1\\
+  du&=8xdx\\
+  \frac{1}{8}du&=xdx\\
+  &=\frac{1}{32}\int_{ }^{ }\frac{du}{u}\\
+  \intertext{Then integrate!}
+  &=\frac{1}{32}\ln\left(\left|u\right|\right)+C\\
+  &=\frac{1}{32}\ln\left(\left|4x^{2}-1\right|\right)+C\\
+  \intertext{Now we plug in the result back into main and simplify}
+  &=\frac{1}{8}x^{2}+\frac{1}{32}\ln\left(\left|4x^{2}-1\right|\right)+C\\
+  &=\boxed{\frac{1}{32}\left(4x^{2}+\ln\left(\left|4x^{2}-1\right|\right)\right)+C}
+\end{align}
+
+\section{To conclude...}
+This method of partial fraction decomp first was definitely more complex and less efficient than just $u$-subbing, as we had to long divide and ended up setting $u=4x^2-1$ on the second integral anyway. But midway through, the $\int_{ }^{ }\frac{1}{4}xdx+\int_{ }^{ }\frac{\frac{1}{4}x}{4x^{2}-1}dx$ looked a lot like the $\frac{1}{32}\left(\int_{ }^{ }du+\int_{ }^{ }\frac{1}{u}du\right)$ that we got from $u$-subbing from the beginning.
+\end{document}
