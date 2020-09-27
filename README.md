@@ -1,3 +1,15 @@
-# Calc in 2020
+# Stu-dying-2020
 
-This time we only upload the readable .tex files lol
+## 0927 Another day of PAIN
+
+- [ ] Math discussion 
+  - [ ] 1 Comment
+  - [ ] Conclusion
+- [ ] Math Quiz
+  - [ ] Study slope fields
+- [ ] Spanish Blog
+- [ ] World History Movie
+- [ ] Spanish Peer Review
+  - [ ] First
+  - [ ] Second
+
