@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{polynom}
+% \usepackage{hyperref}
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     filecolor=magenta,      
+%     urlcolor=cyan,
+% }
+
+\usepackage{fancyhdr}
+% \setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{In Conclusion}
+\author{by Shengdong Li}
+\date{27 September 2020}
+\maketitle
+
+\section{Concerning Problem Set A}
+In problem set A, the commonality between every single problem was the $\left(x+5\right)^{2}$ repeated linear factor in the denominator. Also, the first two problems, which both only hand $(x+5)^2$ in the denominator could be solved with $u$-sub very easily, while the third problem, which tacked on an extra $(x-3)$ required partial fraction decomp. This leads me to believe that when there's only one unique factor on the denominator, in a proper fraction, $u$-sub should be considered. 
+
+\section{Concerning Problem Set B}
+In problem set B, you could either start the problem with $u$-sub, or you could try partial fraction decomp. In both methods, the rational express ended up being broken into two pieces. In partial fraction decomp, we got $\int_{ }^{ }\frac{1}{x+5}dx-5\int_{ }^{ }\frac{1}{\left(x+5\right)^{2}}dx$, while using $u$-sub, we got $\int_{ }^{ }du+\int_{ }^{ }\frac{1}{u}du$. This reminded me that the goals of $u$-sub and partial fraction decomp in solving the integral of a rational expression is very similar: you're trying to break the expression into simpler pieces.
+\end{document}
