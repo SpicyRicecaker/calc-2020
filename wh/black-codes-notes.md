@@ -1,10 +1,10 @@
 # Black Codes
 
 ## TODO
-  - [ ] Watch movie
-  - [ ] Look through google slides
-  - [ ] Look through amendments document
-  - [ ] Take notes in how radical was congressional reconstruction
+  - [x] Watch movie
+  - [x] Look through google slides
+  - [x] Look through amendments document
+  - [x] Take notes in how radical was congressional reconstruction
   
 ## General Notes
 ### Terms

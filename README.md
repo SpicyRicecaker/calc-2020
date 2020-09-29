@@ -2,7 +2,7 @@
 
 ## Zoom Links
 
-[calc](https://forms.gle/rw2B1UAsuV2sGDru9)  
+[calc](https://beavertonk12.zoom.us/j/92876523585?pwd=bkhuOVJxcnhXbG9qRkxtQVJTMHQ5UT09)  
 [at](#)  
 [spanish](https://beavertonk12.zoom.us/j/97508028151?pwd=M3BsWjd5YWQzTEFsc2hrMk5lcjY0dz09)  
 [wh](https://beavertonk12.zoom.us/j/99386018365?pwd=Z3hTNXJTWG45M3ZKL2VvdXdYV1NaZz09)
