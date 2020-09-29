@@ -17,4 +17,20 @@
 
 
 ## Todos
-- [ ] World History Movie
+- [ ] Coding Pumpkin
+  - [ ] Rest API backend
+  - [ ] Google API frontend + backend
+  - [ ] Dynamic Wiki Page
+
+- [ ] Spanish
+  - [ ] Virtual tour
+  - [ ] Quick organize folder
+  - [ ] Quizlet Pass 1
+
+- [ ] Calc
+  - [ ] Read week info
+  - [ ] Do day 1 & 2 hw
+  - [ ] Disc @ thurs night
+
+- [ ] World History
+  - [ ] Part II Film
