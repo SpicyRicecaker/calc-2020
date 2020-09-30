@@ -21,16 +21,14 @@
   - [ ] Rest API backend
   - [ ] Google API frontend + backend
   - [ ] Dynamic Wiki Page
-
-- [ ] Spanish
-  - [ ] Virtual tour
-  - [ ] Quick organize folder
-  - [ ] Quizlet Pass 1
+  - [ ] 50 limit on terms
 
 - [ ] Calc
-  - [ ] Read week info
+  - [ ] Pay for PSU
   - [ ] Do day 1 & 2 hw
+  - [ ] Wednesday's HW
   - [ ] Disc @ thurs night
+  - [x] Read week info
 
 - [ ] World History
   - [ ] Part II Film
