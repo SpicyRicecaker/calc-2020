@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{Initial Post}
+\author{by Shengdong Li}
+\date{1 October 2020}
+\maketitle
+
+\section{Topic of Interest}
+
+One topic that really interests me that could be modeled by a DE is the population of the United States.
+
+\section{Data Collection}
+
+For data, I decided to use information from \href{https://www.worldometers.info/world-population/us-population/}{Worldometer}, more specifically the rate of yearly population growth rate and total population in 2019.
+
+At the end of 2019, the total population was estimated to be 329,064,917 people, while the yearly population growth rate was estimated to be around $.6\%$ (which translates to $.006$ in decimal form).
+
+This leads me to a differential equation of $\frac{dP}{dt}=.006P$, with a initial point of 2019, 329064917.
+
+\section{Solving the DE}
+$$
+  \frac{dP}{dt}=.006P
+$$
+\begin{align}
+  \intertext{First bring each variable to one side}
+  \frac{dP}{P}                                & =.006dt                     \\
+  \intertext{Next we can integrate both sides}
+  \int_{ }^{ }\frac{dP}{P}                    & =\int_{ }^{ }.006dt         \\
+  \ln\left(P\right)                           & =.006t+C                    \\
+  \intertext{Raise $e$ to the power of both sides}
+  P                                           & =e^{.006t+C}                \\
+  \intertext{Since $e^C$ is a constant we can take it out and set it as one $C$}
+  P                                           & =Ce^{.006t}                 \\
+  \intertext{Next we can plugin our known value point of $\left(2019,329064917\right)$}
+  329064917                                   & =Ce^{.006\left(2019\right)} \\
+  \intertext{Then solve for $C$}
+  \frac{329064917}{e^{.006\left(2019\right)}} & =C                          \\
+  C                                           & \approx1804.007             \\
+  \intertext{Plug it back in to get our particular solution}
+  \Aboxed{P                                   & =1804.007e^{.006t}}         \\
+\end{align}
+\end{document}

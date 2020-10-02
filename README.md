@@ -24,11 +24,7 @@
   - [ ] 50 limit on terms
 
 - [ ] Calc
-  - [ ] Pay for PSU
-  - [ ] Do day 1 & 2 hw
-  - [ ] Wednesday's HW
   - [ ] Disc @ thurs night
-  - [x] Read week info
 
 - [ ] World History
   - [ ] Part II Film
