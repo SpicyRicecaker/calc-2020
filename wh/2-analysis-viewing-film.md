@@ -130,12 +130,17 @@ Part II
   - 14th amendment only restrained states from depriving your public rights
   - Was not a state action, local private crime, states must take care of that
   - Led to horrible violence that reduced voice of African Americans
+- Election 1876
+  - Promised to put reconstruction to an end
+  - Democrats outraged Tilden not elected, Tilden or blood
 ## Key Questions
 
 1. How was the American government presented with an opportunity to provide redress for hundreds of years of enslavement immediately after the war? What happened?   
    - The American government could redistribute lands and allow the black people to work by themselves. However, it sat back and watched as slavery in another name was brought upon to the American people
 2. How did Andrew Johnson’s hands off policies enable a white backlash? 
    - He implied that blacks have no rights whatsoever, which allowed whites to riot
-3. How did Congress enable an expansion of freedom and citizenship? 
+3. How did Congress enable an expansion of freedom and citizenship?
+      - The civilel
+   - Congress was able to pass the 14th and 15th amendment, which granted equal rights for all citizens under the law 
 4. How did black political activity shape Reconstruction?
 5. Why and how did the federal government abandon reconstruction? What were the impacts of retreat? 
