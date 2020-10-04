@@ -1,0 +1,60 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Daphne Wu and Ankur Moolky}
+\author{by Shengdong Li}
+\date{4 October 2020}
+\maketitle
+
+Hey Daphne and Ankur,
+Thank you both for replying to my post! I definitely acknowledge and agree with both of you in that the population growth rate definitely does not stay constant over time for any given population, as there can be a huge amount of things that impact population, such as war, disease, famine, advances in technology, etc.
+
+To further demonstrate how inaccurate this model is, If we calculated the percent error of your estimations via $$
+  \frac{calculated-actual}{actual}
+$$
+We would get something like
+\begin{align}
+  \%\:error\:of\:P(1860) & = 303.12\% \\
+  \%\:error\:of\:P(1950) & = 36.97\%  \\
+  \%\:error\:of\:P(2020) & = 0.01\%   \\
+  \%\:error\:of\:P(2050) & = 4.46\%   \\
+\end{align}
+Which is pretty innacurate.
+
+With this in mind though, I'd have to disagree with both of you and say that this population growth model isn't just inaccurate for the past and more accurate for the future, but rather more accurate the closer together the predicted points are to the sample point and less accurate the farther away the predicted part, as to be expected of a tangent line. Ankur used the points $1950$ and $2050$, but they are not an equal distance away from $2020$, rather $70$ and $30$ years away respectively. If we used the point $1990$ instead, with a population estimate of $252,120,309$...
+$$
+  \frac{1804.007e^{.006\left(1990\right)}-252120309}{252120309}\cdot100=9.67\%
+$$
+9.67\% is a lot closer to 4.46\% than the previously suggested 36.7\%.
+
+\end{document}
