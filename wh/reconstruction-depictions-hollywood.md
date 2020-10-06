@@ -1,7 +1,3 @@
-## TODO
-- [ ] Part 1 video guide
-- [ ] Part 2 video guide
-
 ## Hollywood's Depictions of Reconstruction
 
 - Use a variety of sources from a different political spectrum 
