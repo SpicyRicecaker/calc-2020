@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\usepackage{graphicx}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{Initial Post}
+\author{by Shengdong Li}
+\date{7 October 2020}
+\maketitle
+
+\section{Rogawski 10.3 Problem 13}
+
+A tissue culture grows until it has a maximum area of $M\:cm^2$. The area $A(t)$ of the culture at time $t$ may be modeled by the differential equation $A'=k\sqrt{A}\left(1-\frac{A}{M}\right)$ where $K$ is a growth constant.
+
+
+Let A(t) be the area at time $t$ (hours) of a growing tissue culture with initial size $A(0) = 1\:cm^2$ , assuming that the maximum area is $M = 16\:cm^2$ and the growth constant
+is $k = 0.1$.
+
+\bigskip
+
+(a) Find a formula for $A(t)$. Note: The initial condition is satisfied for
+two values of the constant $C$. Choose the value of $C$ for which A(t) is
+increasing.
+
+(b) Determine the area of the culture at $t = 10$ hours.
+
+\section{Summary of struggles}
+
+I was pluggin' and chuggin' along using the $y=\frac{L}{1+Ce^{-kt}}$ formula until I ran into this problem, which I couldn't put into the standard form of $\frac{dy}{dt}=ky\left(1-\frac{y}{L}\right)$ due to its $\sqrt{A}$.
+
+The textbook mentioned (in the question above) something about setting $A=u^2$, but I had no idea how to actually implement that, so I proceeded to try and solve it using seperation by parts. However, the steps were absolutely atrocious and as I arrived at the answer I began to wonder how this question was even remotely legal for a homework problem.
+
+\bigskip
+
+I would love to see someone's work in solving this problem!
+\end{document}
