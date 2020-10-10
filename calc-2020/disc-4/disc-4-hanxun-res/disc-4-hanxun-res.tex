@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Hanxun Li}
+\author{by Shengdong Li}
+\date{9 October 2020}
+\maketitle
+
+\section{Intro}
+Hello Hanxun!
+
+When I did my homework I ran through this problem using the $y=\frac{L}{1+Ce^{-kt}}$, but upon further examination solving this differential equation using seperation of variables is actually quite a challenge (as it always is).
+
+Looking through your work, you're right, it is perfectly correct, you didn't make any algebra mistakes. However, if you want to get to the answer closest to the textbook, you could've approached one thing differently: factoring $\left(1-\frac{P}{2000}\right)$ before you actually do the partial fraction decomposition.
+
+Below I'll show you my steps in solving the problem. Just read through \hyperref[eq:test]{Section 2.1} for the part about factoring $\left(1-\frac{P}{2000}\right)$. I kept most variables the same but substituted $k$ for $0.6$
+
+\section{Solving \texorpdfstring{$\frac{dP}{dt}=0.6P\left(1-\frac{P}{2000}\right)$}{Lg}}
+
+\begin{align}
+  \intertext{Bring each variable to each side and take the integral}
+  \int_{ }^{ }\frac{dP}{P\left(1-\frac{P}{2000}\right)} & =\int_{ }^{ }0.6dt
+\end{align}
+\subsection{\textbf{Refactoring \texorpdfstring{$\int_{ }^{ }\frac{dP}{P\left(1-\frac{P}{2000}\right)}$}{Lg}}}\label{eq:test}
+\begin{align}
+  \intertext{We can factor out the $\frac{1}{2000}$ and a negative from the bottom expression to prevent the $-P$}
+  \int_{ }^{ }\frac{dP}{P\left(1-\frac{P}{2000}\right)}
+   & =\int_{ }^{ }\frac{dP}{\frac{1}{2000}P\left(1\cdot2000-\frac{P}{2000}\cdot2000\right)} \\
+   & =\int_{ }^{ }\frac{dP}{\frac{1}{2000}P\left(2000-P\right)}                             \\
+   & =\int_{ }^{ }\frac{dP}{-\frac{1}{2000}P\left(P-2000\right)}                            \\
+  \intertext{Next we can take the fraction out of the integral}
+   & =-2000\int_{ }^{ }\frac{dP}{P\left(P-2000\right)}
+\end{align}
+\subsection{\textbf{Partial fraction decomp of \texorpdfstring{$\frac{1}{P\left(P-2000\right)}$}{Lg}}}
+\begin{align}
+  \intertext{Plugin in numbers to solve for variables}
+  \frac{1}{P\left(P-2000\right)}   & =\frac{A}{P}+\frac{B}{\left(P-2000\right)}                                                                  \\
+  1                                & =A\left(P-2000\right)+B\left(P\right)                                                                       \\
+  P                                & =2000                                                                                                       \\
+  1                                & =2000B                                                                                                      \\
+  B                                & =\frac{1}{2000}                                                                                             \\
+  P                                & =0                                                                                                          \\
+  1                                & =-2000A                                                                                                     \\
+  A                                & =-\frac{1}{2000}                                                                                            \\
+  \intertext{Plugin back to our main fraction}
+                                   & =\frac{\frac{1}{2000}}{\left(P-2000\right)}-\frac{\frac{1}{2000}}{P}                                        \\
+  \intertext{We can actually just factor out the $\frac{1}{2000}$ for now}
+                                   & =\frac{1}{2000}\left(\frac{1}{\left(P-2000\right)}-\frac{1}{P}\right)                                       \\
+  \intertext{Then plugin back to the main integral}
+                                   & =-2000\cdot\frac{1}{2000}\left(\int_{ }^{ }\frac{1}{\left(P-2000\right)}dP-\int_{ }^{ }\frac{1}{P}dP\right) \\
+  \intertext{Cancel the outside and integrate inside the fractions}
+                                   & =-\left(\ln\left(P-2000\right)-\ln\left(P\right)\right)                                                     \\
+  \intertext{Simplify the fraction as much as we can}
+                                   & =\ln\left(P\right)-\ln\left(P-2000\right)                                                                   \\
+                                   & =\ln\left(\frac{P}{P-2000}\right)                                                                           \\
+  \intertext{Plugin back to the original equation}
+  \ln\left(\frac{P}{P-2000}\right) & =\int_{ }^{ }0.6dt                                                                                          \\
+  \intertext{Integrate and simplify the right side}
+  \ln\left(\frac{P}{P-2000}\right) & =0.6t+C                                                                                                     \\
+  \frac{P}{P-2000}                 & =Ce^{0.6t}                                                                                                  \\
+  \intertext{Cross multiply here. We're basically trying to get one of the $P$s to cancel so we're not left with two $Ce^{kt}$s}
+  Ce^{0.6t}\left(P-2000\right)     & =P                                                                                                          \\
+  \frac{P-2000}{P}                 & =\frac{1}{Ce^{0.6t}}                                                                                        \\
+  \intertext{Now that the $P$s cancel, it's a pretty straightforward solve and you can see how it matches up with the textbook answer}
+  1-\frac{2000}{P}                 & =\frac{1}{Ce^{0.6t}}                                                                                        \\
+  -\frac{2000}{P}                  & =\frac{1}{Ce^{0.6t}}-1                                                                                      \\
+  \frac{2000}{P}                   & =1-\frac{1}{Ce^{0.6t}}                                                                                      \\
+  2000                             & =P\left(1-\frac{1}{Ce^{0.6t}}\right)                                                                        \\
+  \Aboxed{P                                & =\frac{2000}{\left(1-\frac{1}{Ce^{0.6t}}\right)}}                                                            \\
+\end{align}
+\section{Conclusion}
+It's pretty terrifying how just a small simplifying difference can make the final answer look completely different, yet still be equivalent!
+\end{document}
