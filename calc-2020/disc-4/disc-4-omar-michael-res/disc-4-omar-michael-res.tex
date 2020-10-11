@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Omar Nassar \& Michael Yun}
+\author{by Shengdong Li}
+\date{10 October 2020}
+\maketitle
+
+\section{Intro}
+Hello Omar and Michael,
+
+Thank you both so much for replying to my initial post! Omar talked about using the equation provided by the textbook in the previous question, which I didn't think about at all and definitely didn't attempt when solving the problem. Then, Michael also gave me an extremely helpful hint on how to actually get to the equation that Omar mentioned.
+
+The part about solving for the $\left(u^{2}\right)'$ in $\left(u^{2}\right)'=k\sqrt{u^{2}}\left(1-\frac{u^{2}}{M}\right)$ by using the chain rule was actually something that I missed when I first began solving the problem, so thanks for that!
+
+Below, I want to take up Michael's challenge of solving for
+
+$$
+  \int_{ }^{ }\frac{du}{\left(1-\frac{u^{2}}{M}\right)}=\int_{ }^{ }\frac{kdt}{2}
+$$
+And getting it in the form of
+$$
+  A=M\left(\frac{Ce\left(\frac{k}{\sqrt{M}}\right)^{t}-1}{Ce\left(\frac{k}{\sqrt{M}}\right)^{t}+1}\right)
+$$
+
+\section{Continuation of \texorpdfstring{$\int_{ }^{ }\frac{du}{\left(1-\frac{u^{2}}{M}\right)}=\int_{ }^{ }\frac{kdt}{2}$}{Lg}}
+
+\begin{align}
+  \int_{ }^{ }\frac{du}{\left(1-\frac{u^{2}}{M}\right)}                            & =\int_{ }^{ }\frac{kdt}{2}                                                         \\
+  \intertext{First factor out the bottom}
+  \int_{ }^{ }\frac{du}{\frac{1}{M}\left(M-u^{2}\right)}                           & =\frac{k}{2}\int_{ }^{ }dt                                                         \\
+  \int_{ }^{ }\frac{du}{-\frac{1}{M}\left(u^{2}-M\right)}                          & =\frac{k}{2}\int_{ }^{ }dt                                                         \\
+  -M\int_{ }^{ }\frac{du}{\left(u^{2}-M\right)}                                    & =\frac{k}{2}\int_{ }^{ }dt                                                         \\
+  \intertext{Now we can focus on the partial fraction decomp of $\frac{1}{\left(u^{2}-M\right)}$}
+  \frac{1}{\left(u+M\right)\left(u-M\right)}                                       & =\frac{A}{\left(u+M\right)}+\frac{B}{\left(u-M\right)}                             \\
+  \intertext{Plugin and for each of the variables}
+  1                                                                                & =A\left(u-M\right)+B\left(u+M\right)                                               \\
+  u                                                                                & =M                                                                                 \\
+  1                                                                                & =2MB                                                                               \\
+  \frac{1}{2}M                                                                     & =B                                                                                 \\
+  u                                                                                & =-M                                                                                \\
+  1                                                                                & =-2MA                                                                              \\
+  -\frac{1}{2}M                                                                    & =A                                                                                 \\
+  \frac{-\frac{1}{2}M}{\left(u+M\right)}+\frac{\frac{1}{2}M}{\left(u-M\right)}                                                                                          \\
+  \intertext{Here we can factor out the numerator}
+  \frac{1}{2}M\left(\frac{1}{\left(u-M\right)}-\frac{1}{u+M}\right)                                                                                                     \\
+  \intertext{Plugin back to main}
+  -\frac{1}{2}M\int_{ }^{ }\left(\frac{1}{\left(u-M\right)}-\frac{1}{u+M}\right)du & =\frac{k}{2}\int_{ }^{ }dt                                                         \\
+  \intertext{Integrate and simplify}
+  -\frac{1}{2}M\left(\ln\left(u-M\right)-\ln\left(u+M\right)\right)                & =\frac{k}{2}t+C                                                                    \\
+  \intertext{Then literally just algebra from here}
+  -\frac{1}{2}M\ln\left(\frac{u-M}{u+M}\right)                                     & =\frac{k}{2}t+C                                                                    \\
+  \ln\left(\frac{u-M}{u+M}\right)                                                  & =\frac{\frac{k}{2}t}{-\frac{1}{2}M}+C                                              \\
+  \ln\left(\frac{u-M}{u+M}\right)                                                  & =-\frac{\frac{kt}{2}}{\frac{M}{2}}+C                                               \\
+  \ln\left(\frac{u-M}{u+M}\right)                                                  & =-\frac{kt}{M}+C                                                                   \\
+  \frac{u-M}{u+M}                                                                  & =Ce^{-\frac{kt}{M}}                                                                \\
+  u-M                                                                              & =Ce^{-\frac{kt}{M}}\left(u+M\right)                                                \\
+  u-M                                                                              & =uCe^{-\frac{kt}{M}}+MCe^{-\frac{kt}{M}}                                           \\
+  u-uCe^{-\frac{kt}{M}}                                                            & =MCe^{-\frac{kt}{M}}+M                                                             \\
+  u\left(1-Ce^{-\frac{kt}{M}}\right)                                               & =MCe^{-\frac{kt}{M}}+M                                                             \\
+  u                                                                                & =\frac{MCe^{-\frac{kt}{M}}+M}{\left(1-Ce^{-\frac{kt}{M}}\right)}                   \\
+  u                                                                                & =M\left(\frac{Ce^{-\frac{kt}{M}}+1}{1-Ce^{-\frac{kt}{M}}}\right)                   \\
+  \intertext{Recall the value of $u$}
+  A                                                                                & =u^{2}                                                                             \\
+  \intertext{Then plug back in}
+  \sqrt{A}                                                                         & =M\left(\frac{Ce^{-\frac{kt}{M}}+1}{1-Ce^{-\frac{kt}{M}}}\right)                   \\
+  \Aboxed{
+  A                                                                                & =\left(M\left(\frac{Ce^{-\frac{kt}{M}}+1}{1-Ce^{-\frac{kt}{M}}}\right)\right)^{2}}
+\end{align}
+
+\section{Conclusion}
+Again, thank you both for replying to my post and showing me how the textbook solution was created.
+
+\end{document}
