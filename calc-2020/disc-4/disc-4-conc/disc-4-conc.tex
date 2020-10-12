@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{In Conclusion}
+\author{by Shengdong Li}
+\date{11 October 2020}
+\maketitle
+
+\section{Intro}
+This discussion taught me a lot about the different ways to solve a differential equation using formulas and seperation of variables. I also discovered some new tips and tricks in to use while solving using seperation of variables.
+
+\section{Omar Nassar}
+From Omar, I realized that a formula such as
+$$
+A=M\left(\frac{Ce\left(\frac{k}{\sqrt{M}}\right)^{t}-1}{Ce\left(\frac{k}{\sqrt{M}}\right)^{t}+1}\right)
+$$
+can be used for differential equations in the form of 
+$$
+A'=k\sqrt{A}\left(1-\frac{A}{M}\right)
+$$
+\section{Michael Yun}
+From Michael, I learned how to get to the aforementioned formula using a handy $u$-sub trick. This involves replacing the $A$ in $A'=k\sqrt{A}\left(1-\frac{A}{M}\right)$ with $u^{2}$, then solving the resulting $\left(u^{2}\right)'$ in $\left(u^{2}\right)'=k\sqrt{u^{2}}\left(1-\frac{u^{2}}{M}\right)$ with chain rule. This made me realize even more how useful and widely applicable $u$-subbing can be, and for solving differential equations of different forms I'll always have this technique in my back pocket.
+\section{Ethan Durham}
+Finally, from Ethan's reply to my comment on Hanxun's post, I reaffirmed my understanding of the constant $C$ value's ability to absorb calculations. However, I also realized how useful it was to take out the negative in $\ln\left(P\right)-\ln\left(A-P\right)=kt+C$ to get $\ln\left(A-P\right)-\ln\left(P\right)=C-kt$, since it makes solving for the end equation, and the end result itself, look a lot prettier with much less work.
+\end{document}
