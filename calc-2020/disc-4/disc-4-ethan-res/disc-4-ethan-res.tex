@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Ethan Durham}
+\author{by Shengdong Li}
+\date{11 October 2020}
+\maketitle
+
+Hello Ethan!
+Thanks for replying to my comment to Hanxun. My answer of $\frac{2000}{1-\frac{1}{Ce^{0.6t}}}$ definitely did not exactly match up with the textbook's answer of $\frac{2000}{1-Ce^{-0.6t}}$. However, I disagree with your comment that I made a mistake due to missing a negative in the absolute values.
+
+In actuality, I left my comment slightly off from the end answer because I thought it was obvious how to manipulate the expression to the textbook answer. I apologize to you and to Hanxun about the confusion that it might've caused.
+
+Below, I'll go through how to exactly match my answer with the textbook's, but also exactly why our answers differ. I think that you'll find that the cause is a lot more simple than the $\pm$ caused by absolute values and natural logs.
+
+\section{Manipulating \texorpdfstring{$\frac{2000}{1-\frac{1}{Ce^{0.6t}}}$}{Lg}}
+
+\begin{align}
+  \intertext{First, we seperate the denominator}
+  \frac{2000}{1-\frac{1}{Ce^{0.6t}}} & =\frac{2000}{1-\frac{1}{C}\cdot\frac{1}{e^{0.6t}}} \\
+  \intertext{Next, the denominator can also be written as a negative exponent}
+                                     & =\frac{2000}{1-\frac{1}{C}\cdot e^{-0.6t}}         \\
+  \intertext{Literally whatever calculation you do to $C$ that does not include a variable does not matter. You can have $C^{1111111111111111111111}$ and it would still end up as $C$. Therefore, it is only natural that $\frac{1}{C}$ becomes $C$}
+  \Aboxed{                           & =\frac{2000}{1-Ce^{-0.6t}} }
+  \intertext{The above answer matches the textbook, but to further illustrate the point about $C$, you can absorb the negative.}
+                                     & =\frac{2000}{1+Ce^{-0.6t}}                         \\
+\end{align}
+\subsection{Why is this important?}
+I don't think that you choose $-C$ because the absolute value in the $\ln$ allows it. You choose it because the $C$ value itself allows it.
+
+\setcounter{equation}{0}
+
+\section{Why do our answers differ?}
+I think that in your post you explained it:
+
+\begin{align}
+  \ln\left(P\right)-\ln\left(A-P\right)=kt+C \\
+  \ln\left(A-P\right)-\ln\left(P\right)=C-kt
+\end{align}
+
+``After attempting to integrate this multiple times by hand, I've realized the best next step from here is to multiply both sides by ``-1'' for two reasons. The first reason is because I know that I am trying to match the ``Logistic Function model''. The second reason is because this will set us up for a cleaner fraction down the line.''
+
+I think that your comment here is very smart because this is something that I completely missed when I solved Hanxun's post for the first time, when I multiplied the negative into the following expression at the point
+$$
+  -\left(\ln\left(P-2000\right)-\ln\left(P\right)\right)
+$$
+\setcounter{equation}{0}
+Below, I'd like to show the steps in continuing solving Hanxun's problem, but following your advice!
+\subsection{Solving from \texorpdfstring{$-\left(\ln\left(P-2000\right)-\ln\left(P\right)\right)=0.6t+C$}{Lg}}
+\begin{align}
+  -\left(\ln\left(P-2000\right)-\ln\left(P\right)\right) & =0.6t+C                    \\\
+  -\ln\left(1-\frac{2000}{P}\right)                      & =0.6t+C                    \\
+  \ln\left(1-\frac{2000}{P}\right)                       & =C-0.6t                    \\
+  1-\frac{2000}{P}                                       & =Ce^{-0.6t}                \\
+  -\frac{2000}{P}                                        & =Ce^{-0.6t}-1              \\
+  \frac{2000}{P}                                         & =1-Ce^{-0.6t}              \\
+  \Aboxed{P                                                      & =\frac{2000}{1-Ce^{-0.6t}}}
+\end{align}
+\setcounter{equation}{0}
+\section{Proof that you can manipulate the \texorpdfstring{$C$}{Lg}}
+Finally, I'll show you that whatever you do to the $C$ doesn't matter because it resolves itself when you solve for it.
+\begin{align}
+P&=\frac{2000}{1-\frac{1}{C}e^{-0.6t}}\\
+500&=\frac{2000}{1-\frac{1}{C}}\\
+500\left(1-\frac{1}{C}\right)&=2000\\
+1-\frac{1}{C}&=4\\
+\frac{1}{C}&=-3\\
+C&=-\frac{1}{3}\\
+P&=\frac{2000}{1-\frac{1}{-\frac{1}{3}}e^{-0.6t}}\\
+\Aboxed{P&=\frac{2000}{1+3e^{-0.6t}}}
+\end{align}
+And this is the same equation that you got using the formula.
+\section{Conclusion}
+Thank you so much for replying to my post. While I did want to correct you on your mistake in pointing out my mistake, I also want to thank you for showing me that pulling out the negative at the point of $\ln\left(P\right)-\ln\left(A-P\right)=kt+C$ makes the rest of the equation much easier to solve.
+\paragraph{}
+Cheers,
+Andy
+\end{document}
