@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Verification to Kaylo Cho's Work on Problem C}
+\author{by Shengdong Li}
+\date{16 October 2020}
+\maketitle
+
+\begin{align}
+  \intertext{\textbf{Part 1}}
+  \intertext{The population change can be modelled by}
+  \frac{dP}{dt}                               & =kP                                                        \\
+  \intertext{Solving for the general solution of population just gives us the standard exponential growth equation}
+  P                                           & =Ce^{kt}                                                   \\
+  \intertext{We can plugin (0, 50000) to solve for the particular solution}
+  \ 50000                                     & =C                                                         \\
+  P                                           & =\ 50000e^{kt}                                             \\
+  \intertext{We can plugin (10, 75000) as our data point from the present}
+  75000                                       & =50000e^{10k}                                              \\
+  \frac{75000}{50000}                         & =e^{10k}                                                   \\
+  \ln\left(\frac{75000}{50000}\right)         & =10k                                                       \\
+  k                                           & =\frac{\ln\left(\frac{75000}{50000}\right)}{10}            \\
+  k                                           & =0.0405                                                    \\
+  P                                           & =\ 50000e^{0.0405t}                                        \\
+  \intertext{10 years from now would be 20 years from 0. So to solve for population, we use $t=20$}
+  P\left(10\right)                            & =50000e^{\left(0.0405\right)\left(20\right)}               \\
+  50000e^{\left(0.0405\right)\left(20\right)} & =112395                                                    \\
+  \intertext{\textbf{Ans.} 10 years from now, the population will be around $112395$ people.}
+  \intertext{\textbf{Ver.} It seems that we got the same answer for 1, good job! One thing to note here is that if you plugin the full $k$ of $0.0405465108108$ you'll get an exact 112500. I have no idea if it's really important that you don't round the $k$ early or not, so in the rest of my post I rounded to the thousandths. Do you have any comment on that?}
+  \intertext{\textbf{Part 2}}
+  \intertext{The change in population can now be modelled by a proportion of total population plus a constant 500}
+  \frac{dP}{dt}                               & =kP+500                                                    \\
+  \intertext{We can solve for the general solution for population using separation of variables}
+  \int_{ }^{ }\frac{dP}{kP+500}               & =\int_{ }^{ }dt                                            \\
+  u                                           & =kP+500                                                    \\
+  du                                          & =kdP                                                       \\
+  \frac{1}{k}du                               & =dP                                                        \\
+  \int_{ }^{ }\frac{1}{u}                     & =\int_{ }^{ }dt                                            \\
+  \frac{1}{k}\ln\left(kP+500\right)           & =t+C                                                       \\
+  \ln\left(kP+500\right)                      & =kt+C                                                      \\
+  kP+500                                      & =Ce^{kt}                                                   \\
+  kP                                          & =Ce^{kt}-500                                               \\
+  P                                           & =Ce^{kt}-\frac{500}{k}                                     \\
+  \intertext{At this point can plugin our k from the last problem}
+  P                                           & =Ce^{\left(0.0405\right)t}-\frac{500}{\left(0.0405\right)} \\
+  P                                           & =Ce^{0.0405t}-12345.679                                    \\
+  \intertext{Now use the point (0, 75000) as our initial to solve for $C$}
+  75000                                       & =C-12345.679                                               \\
+  75000+12345.679                             & =C                                                         \\
+  C                                           & =87345.679                                                 \\
+  P                                           & =87345.679e^{0.0405t}-12345.679                            \\
+  P\left(10\right)                            & =87345.679e^{0.0405\left(10\right)}-12345.679              \\
+  P                                           & =118611                                                    \\
+  \intertext{\textbf{Ans.} With 500 people moving in each year, 10 years from now the population will be 118611 people.}
+  \intertext{\textbf{Ver.} I think that here your answer of 78,610 is slightly incorrect. Just using logic alone, if the growth rate is same as our previous function, but there's an additional 500 people each year, there's no way that the population can be less than 112395. Plugging in the value of $87345.679e^{0.0405\left(10\right)}$ to the calculator gives 130958.07, but coincidentally, I found that plugging in $87346e^{.0405\left(1\right)}$ actually gives 90956.12, the same answer that you got. I think that your work is very clean and clear, but you just made a slight calculation error at the very end.}
+  \intertext{\textbf{Part 3}}
+  \intertext{The change in small businesses can be modeled as}
+  \frac{dB}{dt}                               & =\frac{k}{B}                                               \\
+  \intertext{We can solve for the general solution using separation of variables.}
+  \int_{ }^{ }BdB                             & =k\int_{ }^{ }dt                                           \\
+  \frac{B^{2}}{2}                             & =kt+C                                                      \\
+  B^{2}                                       & =2kt+C                                                     \\
+  \intertext{We can pick the positive variant as it doesn't make any sense for there to be negative small businesses}
+  B                                           & =\sqrt{2kt+C}                                              \\
+  \intertext{Plugin (0, 26), and (5, 59), then calculate (9, B)}
+  26                                          & =\sqrt{C}                                                  \\
+  C                                           & =26^{2}                                                    \\
+  C                                           & =676                                                       \\
+  B                                           & =\sqrt{2kt+676}                                            \\
+  \intertext{Plugging in 5, 59}
+  59                                          & =\sqrt{10k+676}                                            \\
+  59^{2}                                      & =10k+676                                                   \\
+  10k                                         & =59^{2}-676                                                \\
+  k                                           & =\frac{59^{2}-676}{10}                                     \\
+  k                                           & =280.5                                                     \\
+  \intertext{This gives us the particular solution of }
+  B                                           & =\sqrt{561t+676}                                           \\
+  \intertext{We plugin 9 to get the businesses by the end of the term}
+  B\left(9\right)                             & =\sqrt{561t+676}                                           \\
+  B\left(9\right)                             & =75                                                        \\
+  \intertext{\textbf{Ans.} By the end of the 4 year term, there will be around $75$ small businesses.}
+  \intertext{\textbf{Ver.} Great work here! Our processes are basically the same.}
+  \intertext{\textbf{Part 4}}
+  \intertext{The change in the percent of population that knows can be modeled by follows}
+  \frac{dP}{dt}                               & =kP\left(1-P\right)                                        \\
+  \intertext{We can use the standard logistics function formula of}
+  y                                           & =\frac{L}{1-Ce^{-kt}}                                      \\
+  \intertext{And plugin the variables that we do know so far (i.e. $L=1$)}
+  P                                           & =\frac{1}{1-Ce^{-kt}}                                      \\
+  \intertext{Now we have the points (0,.01), (2,.25) , and (11,P)}
+  \intertext{First plugging in (0,.01) to solve for C}
+  .01                                         & =\frac{1}{1-C}                                             \\
+  .01-.01C                                    & =1                                                         \\
+  .01C                                        & =-.99                                                      \\
+  C                                           & =-99                                                       \\
+  \intertext{This gives us}
+  P                                           & =\frac{1}{1+99e^{-kt}}                                     \\
+  \intertext{Next plugging in (2, .25) for k}
+  .25                                         & =\frac{1}{1+99e^{-2k}}                                     \\
+  .25+\frac{99}{4}e^{-2k}                     & =1                                                         \\
+  \frac{99}{4}e^{-2k}                         & =.75                                                       \\
+  e^{-2k}                                     & =\frac{.75}{\frac{99}{4}}                                  \\
+  -2k                                         & =\ln\left(\frac{.75}{\frac{99}{4}}\right)                  \\
+  k                                           & =\frac{\ln\left(\frac{.75}{\frac{99}{4}}\right)}{-2}       \\
+  k                                           & =1.7483                                                    \\
+  \intertext{This gives us a final particular solution of}
+  P                                           & =\frac{1}{1+99e^{-\left(1.7483\right)t}}                   \\
+  \intertext{Then plugin $t=11$ to get our rumor}
+  P                                           & =\frac{1}{1+99e^{-\left(1.7483\right)\left(11\right)}}     \\
+  P                                           & =1                                                         \\
+  \intertext{\textbf{Ans.} Approximately 100\% of people will know of the rumour 10 days from now.}
+  \intertext{\textbf{Ver.} Agree!}
+  \intertext{\textbf{Part 5}}
+  \intertext{Change in population can be modelled by }
+  \frac{dP}{dt}                               & =kP                                                        \\
+  \intertext{Which gives us the standard exponential growth function of}
+  P                                           & =Ce^{kt}                                                   \\
+  \intertext{We can use the points (0, 75000), (3, 50,000), and solve for (4, P)}
+  \intertext{Plugging in (0, 75000)}
+  75000                                       & =C                                                         \\
+  P                                           & =75000                                                     \\
+  \intertext{Plugging in (3, 50,000)}
+  50000                                       & =75000e^{3k}                                               \\
+  k                                           & =\frac{\ln\left(\frac{50000}{75000}\right)}{3}             \\
+  k                                           & =-0.135                                                    \\
+  \intertext{This gives us a final particular solution of}
+  P                                           & =75000e^{-0.135t}                                          \\
+  \intertext{Now we plugin 4 for the end of the 4 year term}
+  P                                           & =75000e^{-0.135\left(4\right)}                             \\
+  P                                           & =43706.119                                                 \\
+  \intertext{Only 60\% of voters will actually be able to vote }
+  .6\cdot43706.119                            & =26223.671                                                 \\
+  \intertext{A simple majority is half}
+  26223.671\cdot.5                            & =13111.836                                                 \\
+  \intertext{Now we just need one more than that}
+                                              & =13112                                                     \\
+  \intertext{\textbf{Ans.} You will need to win 13112 votes in order to be mayor for another term}
+  \intertext{\textbf{Ver.} Same!}
+\end{align}
+\end{document}
