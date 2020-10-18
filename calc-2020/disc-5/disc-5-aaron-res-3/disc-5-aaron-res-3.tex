@@ -1,0 +1,255 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Verification of Aaron Li's work on problem B}
+\author{by Shengdong Li}
+\date{18 October 2020}
+\maketitle
+
+\begin{align}
+  \intertext{\textbf{B} Tank Problem Alternative: You have a job maintaining the volume and clarity of a lake that's used for a small town's water supply. This lake has two streams that feed it. One stream is a pure-water mountain spring with uncontrolled flow. The other stream does feed the lake, but not before flowing past a local factory. The factory tries to act responsibly, but does end up polluting the stream from time to time. Of particular issue are Xylenes, which the EPA monitors for safety. Xylenes should not exceed 10 mg/L in drinking water, so the goal is to keep the lake's concentration at or below this level for the safety of the town it supports without necessitating extra water treatment (and cost). Given this reality, there is a small dam on this stream so that you can control the amount of flow that occurs, as needed. When the toxin levels are too high, the factory has a process to recycle and clean up the water before allowing it back into the water system. There is also a dam that controls the volume of the lake should it get too full, and a hydro-turbine, used for hydro-energy, but also acts as a pretty fantastic mixer. The volume of the lake is \textbf{73,900,000 L}. }
+  \intertext{\textbf{Part 1} When you measure the total concentration of Xylenes in the lake, you note that it's at 9.5 mg/L, which is getting pretty high.  You initiate a close on the feeding stream and begin the process of allowing the mountain stream to flush the lake.  You set the dam that allows water out of the lake to the same rate of the mountain stream (1700 L/min).  For how long should you program the dam to be open to get it at or below a concentration of 5 mg/L? }
+  \intertext{Xylene out would be}
+  -\left(1700\cdot\frac{L}{\min}\right)\left(\frac{X}{73900000}\cdot\frac{mg}{\min}\right) & =-\frac{1700X}{73900000}\cdot\frac{mg}{\min}                                                                                                                              \\
+                                                                                           & =-\frac{17X}{739000}\cdot\frac{mg}{\min}                                                                                                                                  \\
+  \intertext{We can set this to the change in xylene}
+  \frac{dX}{dt}                                                                            & =-\frac{17}{739000}X                                                                                                                                                      \\
+  \intertext{And solve it to get the general solution of concentration of xylene over time}
+  \int_{ }^{ }\frac{dX}{X}                                                                 & =-\frac{17}{739000}\int_{ }^{ }dt                                                                                                                                         \\
+  \ln\left(X\right)                                                                        & =-\frac{17}{739000}t+C                                                                                                                                                    \\
+  X                                                                                        & =Ce^{-\frac{17}{739000}t}                                                                                                                                                 \\
+  \intertext{To get the initial amount of xylene (i.e. (0,X)) we just take the concentration of 9.8 mg/L and multiply that by the total lake volume}
+  X_{0}                                                                                    & =\left(9.5\cdot\frac{mg}{L}\right)\left(73900000\cdot L\right)                                                                                                            \\
+  X_{0}                                                                                    & =702050000\cdot mg                                                                                                                                                        \\
+  \intertext{Now we can plugin the point (0,702050000) to solve for the C in our general solution}
+  702050000                                                                                & =Ce^{-\frac{17}{739000}\left(0\right)}                                                                                                                                    \\
+  702050000                                                                                & =C                                                                                                                                                                        \\
+  \intertext{This gives us the final particular solution of }
+  X                                                                                        & =702050000e^{-\frac{17}{739000}t}                                                                                                                                         \\
+  \intertext{If we want it at a concentration of 5 mg/L, we simply need to multiply that by the total lake volume once more}
+  X_{t}                                                                                    & =\left(5\cdot\frac{mg}{L}\right)\left(73900000\cdot L\right)                                                                                                              \\
+  X_{t}                                                                                    & =369500000\cdot mg                                                                                                                                                        \\
+  \intertext{Finally we can plug this point (t, 369500000) into our Xylene over time to know how long we should keep the dam open}
+  369500000                                                                                & =702050000e^{-\frac{17}{739000}t}                                                                                                                                         \\
+  \frac{369500000}{702050000}                                                              & =e^{-\frac{17}{739000}t}                                                                                                                                                  \\
+  \frac{\ln\left(\frac{369500000}{702050000}\right)}{-\frac{17}{739000}}                   & =t                                                                                                                                                                        \\
+  t                                                                                        & =27901.77                                                                                                                                                                 \\
+  \intertext{\textbf{Ans.} The dam should be kept open for around 27901.77 minutes to get the concentration of Xylene to 5 mg/L}
+  \intertext{\textbf{Ver.} I agree with your process and it looks like we got the same answer!}
+\end{align}
+\begin{align}
+  \intertext{\textbf{Part 2} This situation happens again later in the summer, unfortunately, after the mountain spring has completely dried up.  However, when you test the water from the stream, you find that it only has 3 mg/L of Xylene, so the accumulation of 9.5 mg/L of Xylene must have been from a prior event.  You leave the stream fully open at 2500 L/min and run the dam at the same level to balance the lake.  How long until you arrive at a concentration of 7 mg/L of Xylene? }
+  \intertext{Xylene In}
+  X_{in}                                                                                   & =\left(2500\cdot\frac{L}{\min}\right)\left(3\cdot\frac{mg}{L}\right)                                                                                                      \\
+  X_{in}                                                                                   & =7500\cdot\frac{mg}{\min}                                                                                                                                                 \\
+  \intertext{Xylene Out}
+  X_{out}                                                                                  & =-\left(2500\cdot\frac{L}{\min}\right)\left(\frac{X}{73900000}\cdot\frac{mg}{L}\right)                                                                                    \\
+                                                                                           & =-\frac{2500}{73900000}X\cdot\frac{mg}{\min}                                                                                                                              \\
+                                                                                           & =-\frac{1}{29560}X\cdot\frac{mg}{\min}                                                                                                                                    \\
+  \intertext{We can add these together to get our model for change in Xylene over time}
+  \frac{dX}{dt}                                                                            & =7500-\frac{1}{29560}X                                                                                                                                                    \\
+  \intertext{If we slightly rearrange the equation, we can see that it is in the form of a first order linear equation}
+  \frac{dX}{dt}+\frac{1}{29560}X                                                           & =7500                                                                                                                                                                     \\
+  X'+\frac{1}{29560}X                                                                      & =7500                                                                                                                                                                     \\
+  \intertext{We can solve this for our general solution of Xylene over time}
+  \intertext{First get the integrating factor}
+  I\left(x\right)                                                                          & =e^{\int_{ }^{ }P\left(x\right)dx}                                                                                                                                        \\
+  I\left(t\right)                                                                          & =e^{\int_{ }^{ }\frac{1}{29560}dt}                                                                                                                                        \\
+  I\left(x\right)                                                                          & =e^{\frac{1}{29560}t}                                                                                                                                                     \\
+  \intertext{Now plugin to the general formula of}
+  y                                                                                        & =\frac{1}{I\left(x\right)}\int_{ }^{ }I\left(x\right)Q\left(x\right)dx                                                                                                    \\
+  X                                                                                        & =\frac{1}{e^{\frac{1}{29560}t}}\int_{ }^{ }\left(e^{\frac{1}{29560}t}\cdot7500\right)dt                                                                                   \\
+  \intertext{Simplify a bit}
+  X                                                                                        & =7500\cdot e^{-\frac{1}{29560}t}\int_{ }^{ }e^{\frac{1}{29560}t}dt                                                                                                        \\
+  \intertext{Then $u$-sub for the integral}
+  u                                                                                        & =\frac{1}{29560}t                                                                                                                                                         \\
+  du                                                                                       & =\frac{1}{29560}dt                                                                                                                                                        \\
+  29560du                                                                                  & =dt                                                                                                                                                                       \\
+  X                                                                                        & =29560\cdot7500e^{-\frac{1}{29560}t}\int_{ }^{ }e^{u}du                                                                                                                   \\
+  \intertext{Remember to add +C inside the parentheses}
+  X                                                                                        & =221700000e^{-\frac{1}{29560}t}\left(e^{\frac{1}{29560}t}+C\right)                                                                                                        \\
+  \intertext{This gives us the final general solution of}
+  X                                                                                        & =221700000+\frac{C}{e^{\frac{1}{29560}t}}                                                                                                                                 \\
+  \intertext{Because the problem stated ``This situation happens again later in the summer'', we can assume that the initial concentration of Xylene is 9.5 mg/L, and thus, we can use the initial value of Xylene we calculated in part 1. }
+  X_{0}                                                                                    & =702050000\cdot mg                                                                                                                                                        \\
+  \intertext{We can then use the point (0, 702050000) to solve for the particular solution of Xylene over time}
+  702050000                                                                                & =221700000+\frac{C}{e^{\frac{1}{29560}\left(0\right)}}                                                                                                                    \\
+  702050000                                                                                & =221700000+C                                                                                                                                                              \\
+  C                                                                                        & =702050000-221700000                                                                                                                                                      \\
+  C                                                                                        & =480350000                                                                                                                                                                \\
+  X                                                                                        & =221700000+\frac{480350000}{e^{\frac{1}{29560}t}}                                                                                                                         \\
+  \intertext{Then if we want 7 mg/L, simply multiply it by the volume of the lake}
+  X_{t}                                                                                    & =\left(7\cdot\frac{mg}{L}\right)\left(73900000\cdot L\right)                                                                                                              \\
+  X_{t}                                                                                    & =517300000                                                                                                                                                                \\
+  \intertext{Now we use the point (t, 517300000) to solve for time until we arrive at the concentration}
+  517300000                                                                                & =221700000+\frac{480350000}{e^{\frac{1}{29560}t}}                                                                                                                         \\
+  517300000-221700000                                                                      & =\frac{480350000}{e^{\frac{1}{29560}t}}                                                                                                                                   \\
+  e^{\frac{1}{29560}t}                                                                     & =\frac{480350000}{517300000-221700000}                                                                                                                                    \\
+  t                                                                                        & =\frac{\ln\left(\frac{480350000}{517300000-221700000}\right)}{\frac{1}{29560}}                                                                                            \\
+  t                                                                                        & =14351.61                                                                                                                                                                 \\
+  \intertext{\textbf{Ans.} It will take around 14351.61 minutes for the concentration of Xylene to arrive at 7 mg/L}
+  \intertext{\textbf{Ver.} Great job on part 2 as well, it looks like we got the same answer. The only things that differed in our processes were that you used separation of variables while I used the formula for first order linear equations to solve for the general solution of Xylene over time, and perhaps further simplifying $\frac{25}{739000}$ to $\frac{1}{29560}$.}
+\end{align}
+\begin{align}
+  \intertext{\textbf{Part 3} The next spring, you are happily balancing the stream flow rate (3000 L/min) and the mountain spring flow rate (2000 L/min) with your dam (at a flow rate of 5000 L/min). You get a notification from the factory that they had a spill....3.5 hours prior.  If your AM testing showed a Xylene concentration of 4 mg/L, what would you expect the concentration to be now, 3.5 hours later, if the concentration of Xylenes from the stream was 50 mg/L? Be careful!  Even though the flows are balanced (which means you're not having a volume problem).  The Xylene is only flowing in at 50 mg/L and 3000 L/min while it's flowing out at 5000 L/min.  If you say it's flowing in at 50 mg/L and 5000 L/min, you'll get a much higher value of Xylene inflow!  }
+  \intertext{Xylene in, if the stream runs at 3000 L/min with a concentration of 50 mg/L of Xylene}
+  X_{in}                                                                                   & =\left(50\cdot\frac{mg}{L}\right)\left(3000\cdot\frac{L}{\min}\right)                                                                                                     \\
+  X_{in}                                                                                   & =150000\cdot\frac{mg}{\min}                                                                                                                                               \\
+  \intertext{Xylene out, if the dam is flowing out at 5000 L/min}
+  X_{out}                                                                                  & =\left(-5000\cdot\frac{L}{\min}\right)\left(\frac{X}{73900000}\cdot\frac{mg}{L}\right)                                                                                    \\
+  X_{out}                                                                                  & =-\frac{5000}{73900000}X\cdot\frac{mg}{\min}                                                                                                                              \\
+  X_{out}                                                                                  & =-\frac{1}{14780}X\cdot\frac{mg}{\min}                                                                                                                                    \\
+  \intertext{Now just add the two together for our change in Xylene over time}
+  \frac{dX}{dt}                                                                            & =150000-\frac{1}{14780}X                                                                                                                                                  \\
+  \intertext{Just like the differential equation in part 2, if we rearrange this equation we can get it in the form of a first order linear equation}
+  X'                                                                                       & =150000-\frac{1}{14780}X                                                                                                                                                  \\
+  X'+\frac{1}{14780}X                                                                      & =150000                                                                                                                                                                   \\
+  \intertext{Next find the integrating factor}
+  I\left(t\right)                                                                          & =e^{\int_{ }^{ }\frac{1}{14780}dt}                                                                                                                                        \\
+  I\left(t\right)                                                                          & =e^{\frac{1}{14780}t}                                                                                                                                                     \\
+  \intertext{Now plugin to the formula!}
+  X                                                                                        & =\frac{1}{e^{\frac{1}{14780}t}}\int_{ }^{ }\left(e^{\frac{1}{14780}t}\cdot150000\right)dt                                                                                 \\
+  \intertext{Try to simplify as much as we can}
+  X                                                                                        & =150000\cdot e^{-\frac{1}{14780}t}\int_{ }^{ }e^{\frac{1}{14780}t}dt                                                                                                      \\
+  \intertext{Now calculate $u$-sub variables}
+  u                                                                                        & =\frac{1}{14780}t                                                                                                                                                         \\
+  du                                                                                       & =\frac{1}{14780}dt                                                                                                                                                        \\
+  14780du                                                                                  & =dt                                                                                                                                                                       \\
+  \intertext{Plugin $u$ and $du$}
+  X                                                                                        & =14780\cdot150000\cdot e^{-\frac{1}{14780}t}\int_{ }^{ }e^{u}du                                                                                                           \\
+  \intertext{Integrate!}
+  X                                                                                        & =14780\cdot150000\cdot e^{-\frac{1}{14780}t}\int_{ }^{ }e^{u}du                                                                                                           \\
+  X                                                                                        & =\left(2.217\cdot10^{9}\right)e^{-\frac{1}{14780}t}\left(e^{\frac{1}{14780}t}+C\right)                                                                                    \\
+  \intertext{This gives us the final general solution for Xylene over time of}
+  X                                                                                        & =2.217\cdot10^{9}+\frac{C}{e^{\frac{1}{14780}t}}                                                                                                                          \\
+  \intertext{Knowing that our initial Xylene is 4 mg/L, multiply that by the lake volume to get total Xylene}
+  X_{0}                                                                                    & =\left(4\cdot\frac{mg}{L}\right)\left(7.39\cdot10^{7}\cdot L\right)                                                                                                       \\
+  X_{0}                                                                                    & =2.956\cdot10^{8}\cdot mg                                                                                                                                                 \\
+  \intertext{We can plugin this point (0,$2.956\cdot10^{8}$) to get the particular solution for Xylene over time}
+  2.956\cdot10^{8}                                                                         & =2.217\cdot10^{9}+\frac{C}{e^{\frac{1}{14780}\left(0\right)}}                                                                                                             \\
+  C                                                                                        & =-1.9214\cdot10^{9}                                                                                                                                                       \\
+  X                                                                                        & =2.217\cdot10^{9}-\frac{1.9214\cdot10^{9}}{e^{\frac{1}{14780}t}}                                                                                                          \\
+  \intertext{Next, we need to convert 3.5 hours to minutes}
+  3.5\ hr                                                                                  & =3.5\cdot60\ \min                                                                                                                                                         \\
+                                                                                           & =210\ \min                                                                                                                                                                \\
+  \intertext{Now we can plugin (210, X) to solve for total xylene}
+  X                                                                                        & =2.217\cdot10^{9}-\frac{1.9214\cdot10^{9}}{e^{\frac{1}{14780}\left(210\right)}}                                                                                           \\
+  X                                                                                        & =3.22706970773\cdot10^{8}                                                                                                                                                 \\
+  \intertext{Concentration is just that divided by total lake volume}
+  X_{concentration}                                                                        & =\frac{3.22706970773\cdot10^{8}\cdot mg}{7.39\cdot10^{7}\cdot L}                                                                                                          \\
+  X_{concentration}                                                                        & =4.37\cdot\frac{mg}{L}                                                                                                                                                    \\
+  \intertext{\textbf{Ans.} The concentration of Xylene 3.5 hours after the spill would be around 4.37 mg/L.}
+  \intertext{\textbf{Ver.} Looks like we got the same answer again! Same as part 2, the only thing that differed between our processes was using the FOLE formula vs. separation of variables.}
+  \intertext{\textbf{Part 4} Later in the spring, the stream is still running at a flow rate of 3000 L/min and the mountain spring is running at 2500 L/min (the snow melt increased).  To balance the flow,  you had the damn running at 5500 L/min.  However, you get a call from the town where they tell you that they've started seeing some flooding and they need you to cut the water.  The issue is that you can't stop the mountain runoff and you can only slow the stream to 1000 L/min (else the factory will see flooding).  So, you drop the stream to 1000 L/min and the mountain running at 2500 L/min, for a combined inflow of 3500 L/min, and an outflow of 1000 L/min.  At a volume of 80,000,000 L of water, you start to see some wildlife consequences to the flooding.  How long will it take to reach that level? }
+\end{align}
+\begin{align}
+  \intertext{Water in}
+  W_{in}                                                                                   & =3500\cdot\frac{L}{\min}                                                                                                                                                  \\
+  \intertext{Water out}
+  W_{out}                                                                                  & =-1000\cdot\frac{L}{\min}                                                                                                                                                 \\
+  \intertext{Water diff}
+  \frac{dW}{dt}                                                                            & =2500\cdot\frac{L}{\min}                                                                                                                                                  \\
+  \intertext{Water over time}
+  W                                                                                        & =2500t+C                                                                                                                                                                  \\
+  \intertext{Plugin the point (0, $7.39\cdot10^{7}$) to solve for $C$}
+  7.39\cdot10^{7}                                                                          & =2500\left(0\right)+C                                                                                                                                                     \\
+  C                                                                                        & =7.39\cdot10^{7}                                                                                                                                                          \\
+  W                                                                                        & =2500t+7.39\cdot10^{7}                                                                                                                                                    \\
+  \intertext{Now plugin (t, $8\cdot10^{7}$) and solve for t}
+  8\cdot10^{7}                                                                             & =2500t+7.39\cdot10^{7}                                                                                                                                                    \\
+  t                                                                                        & =\frac{8\cdot10^{7}-7.39\cdot10^{7}}{2500}                                                                                                                                \\
+  t                                                                                        & =2440                                                                                                                                                                     \\
+  \intertext{\textbf{Ans.} It will take around 2440 minutes to reach $8\cdot10^{7}$ L of water.}
+  \intertext{\textbf{Ver.} Same answer! I solved a differential to get to my answer, but your method using basic algebra is definitely more than enough to solve this problem. }
+\end{align}
+\begin{align}
+  \intertext{\textbf{Part 5} During part 4 the Xylene is flowing in at 6 mg/L.  If the lake started at 2 mg/L. what will the concentration of Xylene be when the lake begins to flood?}
+  \intertext{Recall that in part 4 the total water in was 3500 L/min. However, the Xylene only comes from the stream, which had a flow rate of 1000 L/min. Therefore multiply 1000 L/min by the concentration of 6 mg/L}
+  X_{in}                                                                                   & =\left(1000\cdot\frac{L}{\min}\right)\left(6\cdot\frac{mg}{L}\right)                                                                                                      \\
+  X_{in}                                                                                   & =6\cdot10^{3}\cdot\frac{mg}{\min}                                                                                                                                         \\
+  \intertext{The Xylene out is a little trickier. We know that the beginning amount of water in the lake is $7.39\cdot10^{7}$, but net water is being added at a rate of 2500 L/min, so we have to account for that when calculating for the concentration of Xylene in the lake}
+  \intertext{If we know that the total water in the late at a given time is...}
+  W_{total}                                                                                & =7.39\cdot10^{7}+2.5\cdot10^{3}\cdot t                                                                                                                                    \\
+  \intertext{...then the concentration of Xylene at some point t can be defined as}
+  X_{concentration}                                                                        & =\left(\frac{X}{7.39\cdot10^{7}+2.5\cdot10^{3}t}\cdot\frac{mg}{L}\right)                                                                                                  \\
+  \intertext{Now we multiply that by the rate at which water is going out, which is 1000 L/min}
+  X_{out}                                                                                  & =\left(-1\cdot10^{3}\cdot\frac{L}{\min}\right)\left(\frac{X}{7.39\cdot10^{7}+2.5\cdot10^{3}t}\cdot\frac{mg}{L}\right)                                                     \\
+  X_{out}                                                                                  & =-\frac{1\cdot10^{3}}{7.39\cdot10^{7}+2.5\cdot10^{3}t}X\cdot\frac{mg}{\min}                                                                                               \\
+  X_{out}                                                                                  & =-\frac{1}{7.39\cdot10^{4}+2.5t}X\cdot\frac{mg}{\min}                                                                                                                     \\
+  \intertext{This gives us the differential for change in Xylene over time}
+  \frac{dX}{dt}                                                                            & =6\cdot10^{3}-\frac{1}{7.39\cdot10^{4}+2.5t}X                                                                                                                             \\
+  \intertext{And, same with part 2 and part 3, if we rearrange this equation, we can get it in the form of a FOLE}
+  X'                                                                                       & =6\cdot10^{3}-\frac{1}{7.39\cdot10^{4}+2.5t}X                                                                                                                             \\
+  X+\frac{1}{7.39\cdot10^{4}+2.5t}X                                                        & =6\cdot10^{3}                                                                                                                                                             \\
+  \intertext{Now we solve this FOLE to get our general solution for Xylene over time!}
+  I\left(t\right)                                                                          & =e^{\int_{ }^{ }\frac{1}{7.39\cdot10^{4}+2.5t}dt}                                                                                                                         \\
+  u                                                                                        & =7.39\cdot10^{4}+2.5t                                                                                                                                                     \\
+  du                                                                                       & =2.5dt                                                                                                                                                                    \\
+  \frac{1}{2.5}du                                                                          & =dt                                                                                                                                                                       \\
+  I\left(t\right)                                                                          & =e^{\frac{1}{2.5}\int_{ }^{ }\frac{1}{u}du}                                                                                                                               \\
+  I\left(t\right)                                                                          & =e^{\frac{2}{5}\ln\left(7.39\cdot10^{4}+2.5t\right)}                                                                                                                      \\
+  I\left(t\right)                                                                          & =e^{\ln\left(\left(7.39\cdot10^{4}+2.5t\right)^{\frac{2}{5}}\right)}                                                                                                      \\
+  I\left(t\right)                                                                          & =\left(7.39\cdot10^{4}+2.5t\right)^{\frac{2}{5}}                                                                                                                          \\
+  \intertext{Now we can plug $I(t)$ into the FOLE formula}
+  X                                                                                        & =\left(7.39\cdot10^{4}+2.5t\right)^{-\frac{2}{5}}\int_{ }^{ }\left(7.39\cdot10^{4}+2.5t\right)^{\frac{2}{5}}\left(6\cdot10^{3}\right)dt                                   \\
+  X                                                                                        & =\left(6\cdot10^{3}\right)\left(7.39\cdot10^{4}+2.5t\right)^{-\frac{2}{5}}\int_{ }^{ }\left(7.39\cdot10^{4}+2.5t\right)^{\frac{2}{5}}dt                                   \\
+  \intertext{Setup $u$-sub variables}
+  u                                                                                        & =7.39\cdot10^{4}+2.5t                                                                                                                                                     \\
+  du                                                                                       & =2.5dt                                                                                                                                                                    \\
+  \frac{1}{2.5}du                                                                          & =dt                                                                                                                                                                       \\
+  \intertext{Plugin and integrate}
+  X                                                                                        & =\frac{2}{5}\left(6\cdot10^{3}\right)\left(7.39\cdot10^{4}+2.5t\right)^{-\frac{2}{5}}\int_{ }^{ }u^{\frac{2}{5}}dt                                                        \\
+  X                                                                                        & =\frac{2}{5}\left(6\cdot10^{3}\right)\left(7.39\cdot10^{4}+2.5t\right)^{-\frac{2}{5}}\left(\frac{5}{7}\cdot\left(7.39\cdot10^{4}+2.5t\right)^{\frac{7}{5}}+C\right)       \\
+  X                                                                                        & =\frac{2}{7}\left(6\cdot10^{3}\right)\left(7.39\cdot10^{4}+2.5t\right)+C\left(\frac{2}{5}\left(6\cdot10^{3}\right)\left(7.39\cdot10^{4}+2.5t\right)^{-\frac{2}{5}}\right) \\
+  \intertext{This gives us the final general solution for Xylene over time}
+  X                                                                                        & =1.26685714286\cdot10^{8}+4.28571428571\cdot10^{3}t+\frac{C}{\left(7.39\cdot10^{4}+2.5t\right)^{\frac{2}{5}}}                                                             \\
+  \intertext{Calculate total xylene of lake if concentration is 2 mg/L}
+  X_{0}                                                                                    & =\left(7.39\cdot10^{7}\cdot L\right)\left(2\cdot\frac{mg}{L}\right)                                                                                                       \\
+  X_{0}                                                                                    & =1.478\cdot10^{8}\cdot mg                                                                                                                                                 \\
+  \intertext{Now plugin this point of (0, $1.478\cdot10^{8}$) to solve for C}
+  1.478\cdot10^{8}                                                                         & =1.26685714286\cdot10^{8}+\frac{C}{\left(7.39\cdot10^{4}\right)^{\frac{2}{5}}}                                                                                            \\
+  C                                                                                        & =\left(1.478\cdot10^{8}-1.26685714286\cdot10^{8}\right)\left(7.39\cdot10^{4}\right)^{\frac{2}{5}}                                                                         \\
+  C                                                                                        & =1.8708293276\times10^{9}                                                                                                                                                 \\
+  \intertext{Plugin C to the general solution}
+  X                                                                                        & =1.26685714286\cdot10^{8}+4.28571428571\cdot10^{3}t+\frac{1.8708293276\cdot10^{9}}{\left(7.39\cdot10^{4}+2.5t\right)^{\frac{2}{5}}}                                       \\
+  \intertext{Now we can plugin our $t$ from part 4, when the lake is flooding, to know our concentration of Xylene}
+  \begin{split}
+  X\left(2440\right)                                                                       =\:&1.26685714286\cdot10^{8}\\
+                                                                                            &+4.28571428571\cdot10^{3}\left(2440\right)\\
+                                                                                            &+\frac{1.8708293276\cdot10^{9}}{\left(7.39\cdot10^{4}+2.5\left(2440\right)\right)^{\frac{2}{5}}}  \\
+  \end{split}\\
+  X\left(2440\right)                                                                       & =1.57597795479\cdot10^{8}\cdot mg                                                                                                                                         \\
+  \intertext{To figure out the concentration, we divide the total Xylene that we just got with the volume of the lake when it is flooding, which is $8\cdot10^{7}$ L.}
+  X_{concentration}                                                                        & =\frac{157597795.479}{8\cdot10^{7}}\cdot\frac{mg}{L}                                                                                                                      \\
+                                                                                           & =1.97\ \cdot\frac{mg}{L}                                                                                                                                                  \\
+  \intertext{\textbf{Ans.} The concentration of Xylene in the lake will be around 9.7 mg/L when the lake floods.}
+  \intertext{\textbf{Ver.} Great job! We got the same answer, and I noticed that you used the formula for FOLEs this time as well.}
+\end{align}
+\end{document}
