@@ -25,7 +25,7 @@
       editor; your work was incredibly easy to follow.
     </div>
     <div style="padding: 1rem 2rem">
-      For part 2, you used separation of variables to solve the differential
+      For part 2, in solving
       <math xmlns="http://www.w3.org/1998/Math/MathML" title="\frac{dv}{dt}=-9.8+kv ">
         <mrow>
           <mfrac>
@@ -47,7 +47,156 @@
           <mi>k</mi>
           <mi>v</mi>
         </mrow>
-      </math>, while I used the formula for FOLEs. 
+      </math>, you used separation of variables while I used the formula for FOLEs. I used to think that FOLEs were
+      generally better to use because the formula makes the solving process more streamlined, but looking at your work
+      and comment I see now that using separation of variables for simple equations actually significantly reducese the
+      amount of steps that you need to solve a problem.
+    </div>
+    <div style="padding: 1rem 2rem">
+      Your comment about me not quite stating the answer to part 3 is definitely valid. In my first initial post I
+      didn't state it directly, just solved for it. In my reply to Aaron I wrote that "From the point at which the
+      meteor is 600 km up, they would have 22.68 s until the meteor hit Houston."
+    </div>
+    <div style="padding: 1rem 2rem">
+      Finally, I think that your solution to solving the equation
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+        title="h=-\frac{\frac{2916}{9.8}}{e^{\frac{9.8}{54}t}}-54t+\frac{5882916}{9.8} ">
+        <mrow>
+          <mi>h</mi>
+          <mo>=</mo>
+          <mo>-</mo>
+          <mfrac>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mn>2916</mn>
+                </mrow>
+                <mrow>
+                  <mn>9</mn>
+                  <mi>.</mi>
+                  <mn>8</mn>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mrow>
+              <msup>
+                <mrow>
+                  <mi>e</mi>
+                </mrow>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mn>9</mn>
+                      <mi>.</mi>
+                      <mn>8</mn>
+                    </mrow>
+                    <mrow>
+                      <mn>54</mn>
+                    </mrow>
+                  </mfrac>
+                  <mi>t</mi>
+                </mrow>
+              </msup>
+            </mrow>
+          </mfrac>
+          <mo>-</mo>
+          <mn>54</mn>
+          <mi>t</mi>
+          <mo>+</mo>
+          <mfrac>
+            <mrow>
+              <mn>5882916</mn>
+            </mrow>
+            <mrow>
+              <mn>9</mn>
+              <mi>.</mi>
+              <mn>8</mn>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>
+      For its roots by factoring out the 54 and putting it in the form of
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+        title="h=-\frac{\frac{2916}{9.8}}{e^{\frac{9.8}{54}t}}-54\left(t-\frac{5882916}{9.8\cdot54}\right) ">
+        <mrow>
+          <mi>h</mi>
+          <mo>=</mo>
+          <mo>-</mo>
+          <mfrac>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mn>2916</mn>
+                </mrow>
+                <mrow>
+                  <mn>9</mn>
+                  <mi>.</mi>
+                  <mn>8</mn>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mrow>
+              <msup>
+                <mrow>
+                  <mi>e</mi>
+                </mrow>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mn>9</mn>
+                      <mi>.</mi>
+                      <mn>8</mn>
+                    </mrow>
+                    <mrow>
+                      <mn>54</mn>
+                    </mrow>
+                  </mfrac>
+                  <mi>t</mi>
+                </mrow>
+              </msup>
+            </mrow>
+          </mfrac>
+          <mo>-</mo>
+          <mn>54</mn>
+          <mfenced open="(" close=")">
+            <mrow>
+              <mi>(t</mi>
+              <mo>-</mo>
+              <mfrac>
+                <mrow>
+                  <mn>5882916</mn>
+                </mrow>
+                <mrow>
+                  <mn>9</mn>
+                  <mi>.</mi>
+                  <mn>8</mn>
+                  <mo>⋅</mo>
+                  <mn>54</mn>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mfenced>
+        </mrow>
+        )
+      </math>
+      Then noticing that plugging in
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" title="\frac{5882916}{9.8\cdot54} ">
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mn>5882916</mn>
+            </mrow>
+            <mrow>
+              <mn>9</mn>
+              <mi>.</mi>
+              <mn>8</mn>
+              <mo>⋅</mo>
+              <mn>54</mn>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>
+      Cancels out the t is a really smart way to solve for the root that I didn't think about at all.
     </div>
   </div>
 </body>
