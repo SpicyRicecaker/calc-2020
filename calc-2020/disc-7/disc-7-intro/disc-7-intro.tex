@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Initial Post}
+\author{by Shengdong Li}
+\date{28 October 2020}
+\maketitle
+
+The half-life of GLP-1 is the time it takes for half of the hormone to decay in its medium. For this exercise, assume the half-life of GLP-1 is 5 minutes.  Suppose $A_0 = 100$ grams of the hormone are initially present in some sample.
+\section{Part 1}
+
+\begin{align}
+  \intertext{ Approaching this problem from the perspective of differential equations...we know that hormone decays proportional to the amount remaining. Thus, our differential equation can be modelled by}
+  \frac{dS}{dt}                      & =-kS                                           \\
+  \intertext{Where $S$ is the amount of substance and $k$ is the constant of proportionality. }
+  \intertext{We can solve for the general solution using separation of variables}
+  \int_{ }^{ }\frac{dS}{S}           & =-k\int_{ }^{ }dt                              \\
+  S                                  & =Ce^{-kt}                                      \\
+  \ln\left(S\right)                  & =-kt+C                                         \\
+  \intertext{Given the initial amount is 100 grams, and that the half life is 5 minutes, we can derive the two points (0, 100) and (5, 50) and use them to solve for the $C$ and $k$ values.}
+  \intertext{Plugging in (0, 100)}
+  100                                & =Ce^{-k\left(0\right)}                         \\
+  100                                & =C                                             \\
+  S                                  & =100e^{-kt}                                    \\
+  \intertext{Plugging in (5, 50)}
+  50                                 & =100e^{-k\left(5\right)}                       \\
+  .5                                 & =e^{-k\left(5\right)}                          \\
+  \frac{\ln\left(.5\right)}{-5}      & =k                                             \\
+  k                                  & =.13863                                        \\
+  \intertext{\underline{This gives the final particular solution of}}
+  S                                  & =100e^{-.13863t}                               \\
+  \intertext{To find the equilibrium solution, we can set our original differential equation equal to 0 and solve for S}
+  0                                  & =-kS                                           \\
+  S                                  & =0                                             \\
+  \intertext{\underline{This means that there should be an equilibrium solution at $S=0$.}}
+  \intertext{To verify this, we can also check the limit as $t$ approaches infinity of our particular solution}
+  \lim_{t \to +\infty} 100e^{-.139t} & = 0                                            \\
+  \intertext{To find the amount of substance left at particular points in time, just plugin to our particular solution}
+  S\left(10\right)                   & =100e^{-.13863\left(10\right)}                 \\
+                                     & =25                                            \\
+  S\left(20\right)                   & =100e^{-.13863\left(20\right)}                 \\
+                                     & =6.25                                          \\
+  S\left(30\right)                   & =100e^{-.13863\left(30\right)}                 \\
+                                     & =1.56                                          \\
+  \intertext{\underline{There will be 25 grams, 6.25 grams, and 1.56 grams at 10, 20, and 30 minutes respectively}}
+  \intertext{To calculate time until 1 gram, we set our equation equal to 1}
+  1                                  & =100e^{-.13863t}                               \\
+  t                                  & =\frac{\ln\left(\frac{1}{100}\right)}{-.13863} \\
+  t                                  & =33.219
+\end{align}
+\underline{It will take 33.22 minutes until only 1 gram of the substance is left}
+\section{Part 2}
+To get our sequence, start out at 100 and add half of that every time, up until we get $\frac{40}{5}+1=8+1=9$ numbers.
+\begin{equation}
+  a_{n}                             =100,\ 50,\ 25,\ 12.5,\ 6.25,\ 3.125,\ 1.563,\ 0.781,\ 0.391 \\
+\end{equation}
+\begin{align}
+  \intertext{Calculating $\frac{a_{n+1}}{a_n}$, we get }
+  \frac{50}{100}  & =\frac{1}{2}                                  \\
+  \frac{25}{50}   & =\frac{1}{2}                                  \\
+  \frac{12.5}{25} & =\frac{1}{2}                                  \\
+  \intertext{Therefore, seeing that the ratios between numbers are equal, we know that this is a geometric sequence, where $r=\frac{1}{2}$}
+  \intertext{And given that the initial value is 100, we can setup a formula for the amount of hormone left like so:}
+  a_{n}           & =100\cdot\left(\frac{1}{2}\right)^{n}         \\
+  \intertext{However, because we know that our original sequence was in 5 minute intervals, which is the half life, we should remember that $n=\frac{t}{5}$.}
+  \intertext{Therefore, 100 minutes would be 20 half lives.}
+  a_{20}          & =100\cdot\left(\frac{1}{2}\right)^{20}        \\
+  a_{20}          & =\frac{100}{2^{20}}                           \\
+  a_{20}          & =9.53674\cdot10^{-5}                          \\
+  \intertext{\underline{There will be $9.53674\cdot10^{-5}$ grams of GLP-1 left after 100 minutes}}
+  \intertext{Looking at the formula}
+  100\cdot\left(\frac{1}{2}\right)^{n}                            \\
+  \intertext{\underline{We know that it converges at 0 because $r=\frac{1}{2}\leq 1$}}
+  \intertext{To calculate the amount of time until 1 gram is left we set it equal to the formula and solve}
+  1               & =100\cdot\left(\frac{1}{2}\right)^{n}         \\
+  n               & =\log_{\frac{1}{2}}\left(\frac{1}{100}\right) \\
+  n               & =6.64386                                      \\
+  \intertext{Then recall that $n=\frac{t}{5}$}
+  \frac{t}{5}     & =6.64386                                      \\
+  t               & =33.2193
+\end{align}
+\underline{It will take around 33.22 minutes until 1 gram of GLP-1 is left}
+
+\end{document}
