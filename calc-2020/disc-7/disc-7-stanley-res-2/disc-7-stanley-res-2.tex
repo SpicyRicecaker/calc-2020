@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Stanley Wang 2.0}
+\author{by Shengdong Li}
+\date{30 October 2020}
+\maketitle
+
+\section{Intro}
+Hey Stanley!
+Verifying your initial post, almost all of our answers were correct, except for the time until $1$ gram is left calculated using sequence formula being $38.2193$ minutes instead of $33.22$ minutes, which you already acknowledged in a comment to my post.
+
+\section{Regarding \texorpdfstring{$a_{n}=\frac{100}{2^{\frac{n}{5}-1}}$}{Lg}}
+I think that 
+I pointed out earlier in my response to your response to my post, that I thought that $\frac{n}{5}$ is invalid in a sequence. However, now, after some research, I rescind that and say that I think my setup of $n=\frac{t}{5}$ is worse, and your setup is better!
+\subsection{Wikipedia def}
+If we look at the wikipedia definition for a \href{https://en.wikipedia.org/wiki/Sequence}{sequence}, it says that ``Formally, a sequence can be defined as a function whose domain is either the \textbf{set of the natural numbers} (for infinite sequences), or the \textbf{set of the first n natural numbers} (for a sequence of finite length n).''
+
+In other words, the indices $i$ in the terms $a_i$ of a sequence must have a domain $i\in\mathbb{N}$.
+
+I do remember learning that natural numbers don't include $0$, but again after consulting Wikipedia's definition for \href{https://en.wikipedia.org/wiki/Natural_number}{natural numbers} I learned that it can be either $\{1, 2, 3, 4, ...\}$ in math theory or $\{0, 1, 2, 3, 4, ...\}$ in computer science.
+\subsection{Ms. McNamee def}
+If we look at the thursday lesson and notes (10/22/20) for last week, we can also see that Ms. McNamee defined the domain as the following: \par
+$\{a_n\}=a_1, a_2, a_3, a_4,...$\par
+all $a_i$ are called "terms", $i\in\mathbb{Z}\:st\:i>0\:\text{(usually)}$
+
+\section{Application}
+Therefore, I think that considering that sequences are intended to have a domain of $\mathbb{N}$, your formula works better than mine because you would be able to plugin numbers at 3 minutes, 7 minutes, and other minutes that are not a multiple of 5 into your formula of $a_{n}=\frac{100}{2^{\frac{n}{5}-1}}$ because $\{3,7\}\in\mathbb{N}$. 
+
+Meanwhile, for me, I would be unable to plugin a number like 3 minutes, into my formula of $a_{n}=\frac{100}{2^{n}}$ because I would have to calculate half-lives first:
+\begin{align}
+n&=\frac{t}{5}\\
+n&=\frac{3}{5}\\
+n&=0.6
+\end{align}
+And $\{0.6\}\not\in\mathbb{N}$ 
+
+\section{Implication}
+Finally, as you mentioned, if you directly are substituting in minutes to $n$ then I think it would make more sense to remove the $-1$ in $a_{n}=\frac{100}{2^{\frac{n}{5}-1}}$, otherwise you would have to add $5$ minutes to every $n$ value as you input, as you mentioned earlier in the response to my response to your response to my post.
+
+\section{In Conclusion}
+\underline{Bottom line is, $a_{n}=\frac{100}{2^{\frac{n}{5}}}$ is better than $a_{n}=\frac{100}{2^{n}}$.}
+Sorry for causing any confusion, and thank you for your patience!
+
+Cheers, 
+
+Andy
+\end{document}
