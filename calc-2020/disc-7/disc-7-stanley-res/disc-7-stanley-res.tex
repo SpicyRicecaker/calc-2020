@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Stanley Wang}
+\author{by Shengdong Li}
+\date{29 October 2020}
+\maketitle
+Hey Stanley! Thank you so much for responding to my initial post!
+It's nice to see that you verified my formulae as accurate.
+
+Examining your initial sequence formula for amount of substance left at $a_{n}=\frac{100}{2^{n-1}}$, I can see that it differed from my initial formula of $a_{n}=100\cdot\left(\frac{1}{2}\right)^{n}$. First, your formula was much more simplified than mine. In my initial, I wrote my formula as is because I thought that it would be better in the form of an exponential equation, of $f\left(x\right)=a\cdot\left(b\right)^{r}$. Now, seeing your equation, I realize that $a_{n}=\frac{100}{2^{n}}$ is much less expensive to calculate. The other difference was that you assumed that the sequence would start at $a_{1}$ and thus added the $n-1$ to account for it while I assumed that the sequence would start at $a_{0}$ and thus kept my $n$ the same.
+
+However, I disagree with you in that I don't think your starting formula was more confusing than mine. I think that assuming the sequence starts at $0$ or $1$ are both valid options! Instead of defining $n=\frac{t}{5}$, you would just have to define it as $n-1=\frac{t}{5}$. Then, if you were solving for the amount of substance left at $100$ minutes, you would just compute the following for $n$
+\begin{align}
+  \frac{100}{5} & =n-1 \\
+  20            & =n-1 \\
+  \Aboxed{21    & =n}
+\end{align}
+Therefore you would still end up with $n=21$, which you could plugin to the formula to get an equal answer.
+
+So I think that the reason you may have thought that your formula was more complicated was because of your second formula of $a_{n}=\frac{100}{2^{\frac{n}{5}-1}}$, which I think may be slightly incorrect based on my understanding of how incrementing in sequences work
+(more on that in a comment to your post).
+
+Again, thanks for replying!
+
+Cheers,
+Andy
+\end{document}
