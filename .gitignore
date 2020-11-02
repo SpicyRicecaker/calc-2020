@@ -2,6 +2,7 @@
 *.fdb_latexmk
 *.fls
 *.log
+*.out
 *.pdf
 *.synctex.gz
 __latexindent_temp.tex

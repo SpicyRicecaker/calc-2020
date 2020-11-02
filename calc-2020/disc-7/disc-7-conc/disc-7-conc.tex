@@ -1,0 +1,74 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{In Conclusion}
+\author{by Shengdong Li}
+\date{1 November 2020}
+\maketitle
+
+\section{\texorpdfstring{$a_{0}$}{Lg} vs \texorpdfstring{$a_{1}$}{Lg}}
+From Stanley's comment to my initial post comparing his formula of $a_{n}=\frac{100}{2^{\frac{n}{5}-1}}$ to my formula of $a_{n}=100\left(\frac{1}{2}\right)^{n}$, I realized the advantages but also complications of assuming the first term in the sequence is $a_{1}$ as opposed to $a_{0}$. Using $a_{1}$ would mean the sequence would have a normal domain of being an integer greater than 0 ($\{1,2,3,4,...\}$), but it would mean that you would have to add 5 minutes to every single $n$ value that you plugin. On the other hand, $a_{0}$ would be slightly unusual starting at 0, but it would mean that you wouldn't have to add 5 minutes to every $n$ value. In the end of my conversation with Stanley, we decided that $n$ starting at $a_{0}$ made more sense for this scenario.
+
+\section{The domain of a sequence}
+Through also comparing the modification to $n$ in our formulae, I came to the conclusion that $2^{\frac{n}{5}}$ was better than $2^{n}$ to calculate the amount of hormone left based on minutes. This is because, on further research and review of the domain of a sequence, I realized that sequences only have a domain of natural numbers or positive integers. If I stuck with my initial formula using $2^{n}$, I would only be able to compute the hormone level at 5 minutes. The formula wouldn't be able to compute the amount of hormone left at say, 17 minutes, because $\frac{17}{5}$ would result in a decimal, and that wouldn't exist on a sequence, so I would have to round. Meanwhile, Stanley's formula using $2^{\frac{n}{5}}$ would allow for calculating the half-life at 1 minute intervals.
+
+\section{Sequence vs differential equation}
+Upon further inspection, the updated sequential model of $S_{n}=\frac{100}{2^{\frac{n}{5}}}$ compared to the original differential model of $S=100e^{-.13863t}$ \textit{look} the same mathematically.
+\subsection{Simplifying \texorpdfstring{$S=100e^{-.13863t}$}{Lg}}
+\begin{align}
+  S & =100e^{-.13863t}                           \\
+  \intertext{Recall that we actually derived the $k$ value from $-\frac{\ln\left(.5\right)}{5}$. The previous equation is equal to}
+  S & =100e^{\frac{t}{5}\ln\left(.5\right)}      \\
+  \intertext{We can set the coefficient $\frac{t}{5}$ as the power of the inner natural log using the power rule for logs}
+  S & =100e^{\ln\left(.5^{\frac{t}{5}}\right)}   \\
+  \intertext{$e$ cancels with the natural log}
+  S & =100e^{\ln\left(.5^{\frac{t}{5}}\right)}   \\
+  \intertext{Then we can just simplify}
+  S & =100\left(.5^{\frac{t}{5}}\right)          \\
+  S & =100\left(.5\right)^{\frac{t}{5}}          \\
+  S & =100\left(\frac{1}{2}\right)^{\frac{t}{5}} \\
+  S & =\frac{100}{2^{\frac{t}{5}}}
+\end{align}
+However, just because they look mathematically the same doesn't mean that they actually are. From my research on the domain of sequences, they only consist of natural numbers. This leads me to conclude that you would only use sequences if you wanted a simpler function that would be easier to visualize and apply calculations on. On the other hand, you would have to use a regular function if wanted to deal with negative numbers or decimals.
+\end{document}
