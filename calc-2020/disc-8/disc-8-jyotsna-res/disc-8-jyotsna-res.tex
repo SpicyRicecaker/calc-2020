@@ -1,0 +1,86 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Jyotsna Tera}
+\author{by Shengdong Li}
+\date{6 November 2020}
+\maketitle
+
+\section{Intro}
+
+Hey Jyotsna! I think that the limit comparison method that you used to solve $\sum_{n=1}^{\infty}\frac{6^{n}}{5^{n}-1}$ in your initial post was a great way to solve the problem.
+
+\section{Divergency Test}
+Another way that you could tackle the problem that Anna reminded me about in a comment to my initial post is to first apply the divergency test, where we take the limit of the series, and if it does not approach $0$ then we know that the series is divergent.
+
+\begin{align}
+  \intertext{To begin we can take the limit as $n\to\infty$ of the original series}
+\lim_{n\to\infty}\frac{6^{n}}{5^{n}-1}
+\intertext{Next we can multiple the top and bottom by $\frac{1}{5^n}$}
+&=\lim_{n\to\infty}\frac{\frac{6^{n}}{5^{n}}}{1-\frac{1}{5^{n}}}
+\intertext{We can use the exponent rules to take $n$ out of the numerator}
+&=\lim_{n\to\infty}\frac{\left(\frac{6}{5}\right)^{n}}{1-\frac{1}{5^{n}}}
+\intertext{Evaluating this we get}
+&=\frac{\infty}{1-0}\\
+&=\infty\\
+&=\boxed{diverges}
+\end{align}
+Now because the $\lim_{n\to\infty}\frac{6^{n}}{5^{n}-1}$ diverges, then by the divergency test we know that the series must also converge.
+
+\section{\texorpdfstring{$\lim_{n\to\infty}\frac{5^{n}}{5^{n}-1}$}{Lg}}
+Kind of similar to the way that we solved the $\lim_{n\to\infty}\frac{6^{n}}{5^{n}-1}$ in the divergency test above, another way that you could think about solving this limit instead of using leading terms is to multiply the top and bottom by $\frac{1}{5^{n}}$.
+
+\begin{align}
+\lim_{n\to\infty}\frac{5^{n}}{5^{n}-1}&=\lim_{n\to\infty}\frac{1}{1-\frac{1}{5^{n}}}\\
+&=1
+\end{align}
+Just a different way that you could think about leading terms!
+
+Feel free to comment if you have any questions about my proces.
+
+\bigskip
+Cheers,
+
+- Andy
+\end{document}
