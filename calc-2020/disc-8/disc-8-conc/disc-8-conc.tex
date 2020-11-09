@@ -1,0 +1,69 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{In Conclusion}
+\author{by Shengdong Li}
+\date{8 November 2020}
+\maketitle
+
+\section{Intro}
+
+In this discussion I reaffirmed my understanding of some of the methods that one could use to approach testing if a series is convergent or not, and was able to practice and notate the different ways of showing the process. 
+
+\section{Methods Used}
+There were three main methods used to test the covergency of $\sum_{n=1}^{\infty} \frac{\sin\left(\frac{1}{k}\right)}{k^{2}}$. These were
+\begin{itemize}
+  \item Direct Comparison Test with $a_n=\sum_{k=1}^{\infty}\frac{\sin\left(\frac{1}{k}\right)}{k^{2}}$ and $b_n=\sum_{k=1}^{\infty}\frac{1}{k^{2}}$ (mine)
+  \item Limit Comparison Test with $a_n=\sum_{k=1}^{\infty}\frac{\sin\left(\frac{1}{k}\right)}{k^{2}}$ and $b_n=\sum_{k=1}^{\infty}\frac{1}{k^{2}}$ (Anna Jiang)
+  \item Integral Test with $u=\frac{1}{k}$ (Amuthan Llavarasan)
+\end{itemize}
+
+\subsection{Best Method}
+
+In my opinion, the best of these tests was probably the limit comparison test that Anna used. Because in $\frac{b_k}{a_k}$ the $k^2$s cancel, all you had to do was simply compute the limit of $\sin(1/k)$ as $n$ approached infinity. This was very simple and required the least amount of steps. I think that the direct comparison test was also a good contender, but required the evaluation of a $p$-series and proof that $b_n$ was greater than $a_n$. Finally, I think that the integral test by Amuthan was also a solid approach and was very straightforward to solve, but in the end required the most amount of steps.
+
+\section{Divergency Test}
+Anna Jiang's comment to my initial post about first using the divergency test when testing for the convergency of series is a really good piece of advice. Because I hadn't used it formally for so long, I almost forgot about it. Thanks to her comment I was reminded about how it worked, and realized that another approach to the problem $\frac{6^{n}}{5^{n}-1}$ could be straight up taking the limit of it as $n$ approached infinity, which allowed me to spread the knowledge and comment to many other people's posts.
+
+\end{document}
