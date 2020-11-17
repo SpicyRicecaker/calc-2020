@@ -14,17 +14,5 @@
 [spanish](https://docs.google.com/forms/d/e/1FAIpQLSejPLKjMVhURL_pd0uAJaNpr4EW9SyzjuR0zOwNGcdyBIVIcw/viewform?fbzx=-9164326596006537329)  
 [wh](https://forms.gle/L3zgT58x3NCDoY3h9)
 
-
-
 ## Todos
-- [ ] Coding Pumpkin
-  - [ ] Rest API backend
-  - [ ] Google API frontend + backend
-  - [ ] Dynamic Wiki Page
-  - [ ] 50 limit on terms
-
-- [ ] Calc
-  - [ ] Disc @ thurs night
-
-- [ ] World History
-  - [ ] Part II Film
+- [ ] Rework attendance
