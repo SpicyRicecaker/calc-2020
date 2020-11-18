@@ -6,3 +6,5 @@
 *.pdf
 *.synctex.gz
 __latexindent_temp.tex
+
+**/node_modules
