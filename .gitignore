@@ -7,4 +7,5 @@
 *.synctex.gz
 __latexindent_temp.tex
 
-**/node_modules
+node_modules
+dist

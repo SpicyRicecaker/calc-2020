@@ -12,8 +12,9 @@
 - [spanish](https://docs.google.com/forms/d/e/1FAIpQLSejPLKjMVhURL_pd0uAJaNpr4EW9SyzjuR0zOwNGcdyBIVIcw/viewform?usp=sf_link)  
 - [wh](https://forms.gle/L3zgT58x3NCDoY3h9)
 
-## Advisory
-[zoom](https://beavertonk12.zoom.us/j/97242068534?pwd=Qk95K2R2VDQ3ZEhXbGkxSWw0ZnE1QT09)
-[attendance](https://docs.google.com/forms/d/e/1FAIpQLSdGi4KvpDdZaJuEzDrnnz-3CcPScAYJNvPIP1MiJZofMnVICQ/viewform?usp=sf_link)
+## advisory
+- [zoom](https://beavertonk12.zoom.us/j/97242068534?pwd=Qk95K2R2VDQ3ZEhXbGkxSWw0ZnE1QT09)
+- [attendance](https://docs.google.com/forms/d/e/1FAIpQLSdGi4KvpDdZaJuEzDrnnz-3CcPScAYJNvPIP1MiJZofMnVICQ/viewform?usp=sf_link)
 
-## Todos
+## Info
+'Don't optimize what you can't test"
