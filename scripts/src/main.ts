@@ -28,11 +28,14 @@ const asyncTimeout = (callback: any, time: number) =>
   new Promise((resolve) => resolve(setTimeout(callback, time)));
 
 const openAllForms = async (classes: any[]) => {
-  const toform: Promise<any>[] = [];
+  // const toform: Promise<any>[] = [];
+  // for (let i = 0; i < classes.length; ++i) {
+  //   toform.push(open(classes[i].form));
+  // }
+  // return Promise.all(toform);
   for (let i = 0; i < classes.length; ++i) {
-    toform.push(open(classes[i].form));
+    await open(classes[i].form);
   }
-  return Promise.all(toform);
 };
 
 const main = async () => {
@@ -53,7 +56,6 @@ const main = async () => {
   await openAllForms(classesToday);
 
   const loop = async () => {
-    console.log('loop');
     // Update date
     date = new Date();
     // If new day restart program
