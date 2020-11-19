@@ -1,0 +1,1 @@
+powershell.exe -command "node dist/main.js"
