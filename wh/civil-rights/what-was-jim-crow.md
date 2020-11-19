@@ -1,0 +1,18 @@
+## Exhibit A
+- Photograph by Gordon Parks, "Airline Terminal, Atlanta, GA, 1956" This photograph was taken in a whites-only waiting area in Atlanta airport at 2:00 AM
+- (Picture of a well-dressed white woman sitting next to an African American woman taking care of her child)
+2. A whites-only waiting area or whites-only anything was created by leaders in the south, who were mostly white people. However, knowing this, the fact that everyone in the airport is so nonchalant at the African American woman taking care of the white woman's child just goes to show how people believe that many white people want to leave the hard jobs to African Americans. This means that segregation, or at least the viewpoint of segregation in the south was still incredibly widespread. To make such a deal out of a black person entering a whites-only area, and then suddenly not caring after an African American woman is there taking care of a white woman's baby is proof of that. 
+3. This photograph makes one wonder how the spread of jobs of African American men and women were like compared to white men and women. It also makes one wonder about the degree of bias that employers would have towards white people over African Americans, to choose someone else just because of the color of their skin.
+
+## Exhibit B
+- Essay by Walter White, 1929. "I investigate Lynchings"
+1. This essay revealed that violence was incredibly widespread in Jim Crow era. Several things were alarming: how state law said that congress couldn't interfere in matters with lynching in peaceful times, that the white person found the lynching in the town of a pregnant woman as exciting and funny, and finally, how any white person sympathetic to African Americans and wanting to stop lynchings in town, would be ostracized by the community. It was widespread, and even the writer himself wrote out his thinking process that an African American would not willingly walk up alone to another white person without being sent.
+2. The authors response to the lynchings versus the white people's response is that it was nauseating and sickening, compared to exciting and funny. To racist whites, it shows that they didn't think African American lifes mattered, and that was ok to toy around with someone of a different skin color.
+3. This essay brings up many questions. Just how many lynchings were there in total that didn't get reported?
+
+## Exhibit C
+- Letter from *President Andrew Johnson* to Governor William Sharkey of Mississipi, June 1865
+
+1. This source revealed that even right after the civil war, after presidient Lincoln signed the emancipation proclamation, the next elected president was racist by himself. That the leader of the United States of America could hold beliefs that were so opposite to the ideals of the winning side of the civil war. President Andrew Johnson's *encouragement* of the suppression of black voters as seen in his letter no doubt helped inspire the confederate south to reinstate slavery in another name in the Black Codes, or allow for segregation.
+2. This source showed that by putting requirements on the price of property owned and literacy, the voice of black voters --- who before the war were victims of decades of the institution of slavery, who weren't allowed to own anything or keep property for themselves --- were pushed out of the system.
+3. This leads me to question what other racist acts Andrew Johnson carried out as the President of the United States of America. If Lincoln didn't get assassinated, or another president was put into power, would the Jim Crow era have been different?
