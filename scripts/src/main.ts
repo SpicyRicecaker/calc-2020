@@ -1,7 +1,14 @@
 /* eslint-disable */
 import days from './days.js';
 import linker from './links.js';
-import open from 'open';
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
+puppeteer.use(StealthPlugin());
+// Bring in the .env file, which has some *sensitive* info
+import dotenv from 'dotenv';
+import type { Browser } from 'puppeteer-extra/dist/puppeteer';
+// Configure the environment accordingly
+dotenv.config();
 
 // parse and compare minute hour string
 // given hours and minutes of the form
@@ -27,18 +34,46 @@ const isInsideTime = (startTime: string, endTime: string, date: Date) => {
 const asyncTimeout = (callback: any, time: number) =>
   new Promise((resolve) => resolve(setTimeout(callback, time)));
 
-const openAllForms = async (classes: any[]) => {
-  // const toform: Promise<any>[] = [];
-  // for (let i = 0; i < classes.length; ++i) {
-  //   toform.push(open(classes[i].form));
-  // }
-  // return Promise.all(toform);
+const signIntoGoogle = async (browser: Browser) => {
+  // const context = await browser.newPage();
+  const page = await browser.newPage();
+
+  await page.goto('https://accounts.google.com');
+  const navigationPromise = page.waitForNavigation();
+
+  await page.waitForSelector('input[type="email"]');
+  await page.type('input[type="email"]', process.env.GOOGLE_USER as string);
+  await page.click('#identifierNext');
+
+  await page.waitForSelector('input[type="password"]', { visible: true });
+  await page.type('input[type="password"]', process.env.GOOGLE_PWD as string);
+
+  await page.waitForSelector('#passwordNext', { visible: true });
+  await page.click('#passwordNext');
+
+  return navigationPromise;
+};
+
+const openZoomLink = async (browser: Browser, link: string): Promise<any> => {
+  const t = await browser.newPage();
+  await t.goto(link);
+  t.on('dialog', async (dialog: any) => {
+    await dialog.accept();
+  });
+};
+
+const openAllForms = async (browser: Browser, classes: any[]) => {
   for (let i = 0; i < classes.length; ++i) {
-    await open(classes[i].form);
+    const t = await browser.newPage();
+    await t.goto(classes[i].form);
   }
+  // await browser.close();
 };
 
 const main = async () => {
+  const browser = await puppeteer.launch({ headless: false });
+  await signIntoGoogle(browser);
+
   let date: Date = new Date();
   const day: string | undefined = days.get(date.getDay());
 
@@ -53,7 +88,7 @@ const main = async () => {
   let currentClassName: string;
 
   // First open all attendance for classes today
-  await openAllForms(classesToday);
+  await openAllForms(browser, classesToday);
 
   const loop = async () => {
     // Update date
@@ -70,7 +105,7 @@ const main = async () => {
     // Open the zoom link for the class if there is one
     for (let i = 0; i < classrn.length; ++i) {
       if (classrn[i].name !== currentClassName) {
-        await open(classrn[i].class);
+        await openZoomLink(browser, classrn[i].class);
         currentClassName = classrn[i].name;
       }
     }
