@@ -47,4 +47,94 @@
 \date{19 November 2020}
 \maketitle
 
+% Remember to use \ldots
+\section{\texorpdfstring{$\frac{1}{1-x}$}{Lg}}
+To find the maclaurin series for $\frac{1}{1-x}$, first find the first 5 derivatives of $f(x)$
+\begin{align}
+  f\left(x\right)                  & =\left(1-x\right)^{-1}                                                                \\
+  f'\left(x\right)                 & =\left(1-x\right)^{-2}                                                                \\
+  f''\left(x\right)                & =2\left(1-x\right)^{-3}                                                               \\
+  f'''\left(x\right)               & =6\left(1-x\right)^{-4}                                                               \\
+  f^{\left(4\right)}\left(x\right) & =24\left(1-x\right)^{-5}                                                              \\
+  f^{\left(5\right)}\left(x\right) & =120\left(1-x\right)^{-6}                                                             \\
+  \intertext{Now we know that in a maclaurin series the function is centered at $a=0$. We plugin $0$ into our previously calculated derivatives}
+  f\left(0\right)                  & =1                                                                                    \\
+  f'\left(0\right)                 & =1                                                                                    \\
+  f''\left(0\right)                & =2\cdot1                                                                              \\
+  f'''\left(0\right)               & =6\cdot1                                                                              \\
+  f^{\left(4\right)}\left(0\right) & =24\cdot1                                                                             \\
+  f^{\left(5\right)}\left(0\right) & =120\cdot1                                                                            
+\end{align}
+We can plug these derivatives into the general formula for taylor polynomials
+\begin{align}
+  \Aboxed{\frac{1}{1-x}                    & =1+x+\frac{2x^{2}}{2!}+\frac{6x^{3}}{3!}+\frac{24x^{4}}{4!}+\frac{120x^{5}}{5!}+...}
+\end{align}
+The final taylor series would then be
+\begin{align}
+  \frac{1}{1-x}                    & = \sum_{n=0}^{\infty}\frac{n!x^{n}}{n!}=\sum_{n=0}^{\infty}x^{n}                      \\
+\end{align}
+Another way to approach finding the series is to define $f^{(n)}(x)$. From the derivatives above, we can see that the $n$th derivative $f^{(n)}(x)$ would be $n!$
+\begin{align}
+  f^{\left(n\right)}\left(x\right) & =n!                                                                                   \\
+  \frac{1}{1-x}                    & = \sum_{n=0}^{\infty}\frac{f^{\left(n\right)}\left(x\right)\cdot\left(x-a\right)}{n!} \\
+  \frac{1}{1-x}                    & = \sum_{n=0}^{\infty}\frac{n!\cdot x}{n!}                                             \\
+\end{align}
+Plugging into the formula, the $n!$s cancel, leaving
+\begin{align}
+\Aboxed{\frac{1}{1-x}                    & = \sum_{n=0}^{\infty}x}
+\end{align}
+\section{\texorpdfstring{$\left(1-2x\right)^{-1}$}{Lg}}
+To find the maclaurin series for $\left(1-2x\right)^{-1}$, find the first 5 derivatives of $f(x)$ again
+\begin{align}
+  f\left(x\right)                  & =\left(1-2x\right)^{-1}                                                                 \\
+  f'\left(x\right)                 & =2\left(1-2x\right)^{-2}                                                                \\
+  f''\left(x\right)                & =8\left(1-2x\right)^{-3}                                                                \\
+  f'''\left(x\right)               & =48\left(1-2x\right)^{-4}                                                               \\
+  f^{\left(4\right)}\left(x\right) & =384\left(1-2x\right)^{-5}                                                              \\
+  f^{\left(5\right)}\left(x\right) & =3840\left(1-2x\right)^{-6}                                                             \\
+  \intertext{Plugin $x=0$ for maclaurin series}
+  f\left(0\right)                  & =1                                                                                      \\
+  f'\left(0\right)                 & =2                                                                                      \\
+  f''\left(0\right)                & =8                                                                                      \\
+  f'''\left(0\right)               & =48                                                                                     \\
+  f^{\left(4\right)}\left(0\right) & =384                                                                                    \\
+  f^{\left(5\right)}\left(0\right) & =3840                                                                                   
+\end{align}
+\begin{align}
+  \intertext{Then plug in the results into the taylor formula to get the first 5 terms}
+  \frac{1}{1-x}                    & =1+2x+\frac{8x^{2}}{2!}+\frac{48x^{3}}{3!}+\frac{384x^{4}}{4!}+\frac{3840x^{5}}{5!}+... \\
+                                   \Aboxed{& =1+2x+4x^{2}+8x^{3}+16x^{4}+32x^{5}+...}                                                 \\
+                                   & = \sum_{n=0}^{\infty}2^{n}x^{n}                                                         \\
+                                   \Aboxed{& = \sum_{n=0}^{\infty}\left(2x\right)^{n}}                                                
+\end{align}
+\begin{align}
+  \intertext{Another way we could approach this problem is to find $f^{(n)}(x)$ and plug that directly into the formula}
+  \frac{1}{1-x}                    & =\frac{f^{\left(n\right)}\left(x\right)\cdot\left(x-a\right)}{n!}                       \\
+  f^{\left(n\right)}\left(x\right) & =n!\cdot2^{n}                                                                           \\
+                                   & =\frac{n!\cdot2^{n}\cdot x}{n!}                                                         \\
+                                   & =2^{n}x^{n}                                                                             \\
+                                   & =\sum_{n=0}^{\infty}\left(2x\right)^{n}                                                                    \\
+\end{align}
+\section{\texorpdfstring{$\frac{1}{1-x^{2}}$}{Lg}}
+To find the maclaurin series for $\frac{1}{1-x^{2}}$, find the first 5 derivatives of $f(x)$
+\begin{align}
+  f\left(x\right)                  & =\frac{1}{1-x^{2}}                                                  \\
+  f\left(x\right)                  & =\left(1-x^{2}\right)^{-1}                                          \\
+  f'\left(x\right)                 & =2x\left(1-x^{2}\right)^{-2}                                        \\
+  f''\left(x\right)                & =\frac{2\left(1+3x^{2}\right)}{\left(1-x^{2}\right)^{3}}            \\
+  f'''\left(x\right)               & =24x\left(\frac{1+x^{2}}{\left(1-x^{2}\right)^{4}}\right)           \\
+  f^{\left(4\right)}\left(x\right) & =24\left(\frac{5x^{4}+10x^{2}+1}{\left(1-x^{2}\right)^{5}}\right)   \\
+  f^{\left(5\right)}\left(x\right) & =240x\left(\frac{3x^{4}+10x^{2}+3}{\left(1-x^{2}\right)^{6}}\right) \\
+  \intertext{Next, plugin $x=0$ for a maclaurin series}
+  f\left(0\right)                  & =1                                                                  \\
+  f'\left(0\right)                 & =0                                                                  \\
+  f''\left(0\right)                & =2                                                                  \\
+  f'''\left(0\right)               & =0                                                                  \\
+  f^{\left(4\right)}\left(0\right) & =24                                                                 \\
+  f^{\left(5\right)}\left(0\right) & =0                                                                  \\
+  \intertext{Plugging the results into the taylor formula gives}
+  \Aboxed{\frac{1}{1-x^{2}}                & =1+\frac{2x^{2}}{2!}+\frac{24x^{4}}{4!}+...}                         \\
+  \Aboxed{\frac{1}{1-x^{2}}                & =\sum_{n=0}^{\infty}x^{2n}}                                         
+\end{align}
+
 \end{document}
