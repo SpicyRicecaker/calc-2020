@@ -1,0 +1,109 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Michael Yan}
+\author{by Shengdong Li}
+\date{20 November 2020}
+\maketitle
+
+Hello Michael,
+Thank you so much for responding to my initial post!
+
+\section{Simplifying the Expanded Form}
+I definitely see your comments about my simplification. I should've simplified my expanded form of the first 5 terms more, instead of moving straight into the summation form.
+
+Rewriting the expanded forms for each question respectively gave me
+$$
+  \frac{1}{1-x}=1+x+x^2+x^3+x^4+x^5+...
+$$
+$$
+  \frac{1}{1-2x}=1+2x+4x^2+8x^3+16x^4+x^5+...
+$$
+$$
+  \frac{1}{1-x^2}=1+x^2+x^4...
+$$
+And these were the same that you got listed in your comment!
+
+\section{Taylor Polynomial vs. Taylor Series}
+Your other comment on my post was about the notation of the expanded form that I used. I'm going to be honest, this made me doubt my notation greatly. However, after heavy research, I think that I've come to a conclusion about the differences between taylor series and taylor polynomials, and justified my notation. Please take a look below...
+
+\subsection{How I wrote it in the beginning}
+I wrote my expanded forms with $f(x)$ on the left and the terms on the right with ellipses like so
+$$
+  \frac{1}{1-x}=1+x+\frac{2x^{2}}{2!}+\frac{6x^{3}}{3!}+\frac{24x^{4}}{4!}+\frac{120x^{5}}{5!}+\ldots
+$$
+
+\subsection{Reasoning After Research}
+If we look at the prompt, it states ``For whichever problem you were assigned, first determine the \uline{Maclaurin Series} for each writing it in summation form and \uline{in its expanded form for the first 5 terms}''.
+
+According to the \href{https://en.wikipedia.org/wiki/Taylor_series}{Wikipedia article}, ``the \textbf{Taylor series} of a function is an \uline{infinite sum of terms} that are expressed in terms of the function's derivatives at a certain point.''
+that is, the summation notation would go to $\infty$
+$$
+  \sum_{n=0}^{\infty}
+$$
+While on the other hand, a \textbf{Taylor polynomial} is ``\uline{the partial sum} formed by the n first terms of a Taylor series is a polynomial of degree n ''
+that is, the summation notation would only go until $n$
+$$
+  \sum_{n=0}^{n}
+$$
+
+Therefore, the ``Maclaurin Series'' would be the full sum of terms to infinity, and not just the partial sum of terms resulting in the taylor polynomial of the 5th degree $T_{5}(x)$. 
+
+Based off this, I concluded that $T_{5}(x)$ and $f(x)$ were not interchangeable because
+$$5\neq\infty$$
+and I believe this is reflected in everyone's summation form in the discussion
+$$
+  \sum_{n=0}^{5}\frac{f^{\left(n\right)}\left(x\right)\cdot\left(x-a\right)}{n!}\neq\sum_{n=0}^{\infty}\frac{f^{\left(n\right)}\left(x\right)\cdot\left(x-a\right)}{n!}
+$$
+where we all put to $\infty$ instead of $5$.
+
+\section{End}
+The online book \href{https://mathbooks.unl.edu/Calculus/sec-7-6-taylor.html}{Coordinated Calculus} also had two equations of taylor polynomials and taylor series that helped me understand their differences.
+
+Thanks again for replying, and please respond if you disagree or have any questions. I'm still shaky on this topic myself!
+\bigbreak
+Cheers,
+
+- Andy
+\end{document}
