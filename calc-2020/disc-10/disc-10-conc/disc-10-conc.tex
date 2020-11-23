@@ -42,127 +42,54 @@
 % \usepackage{indentfirst}
 
 \begin{document}
-\title{\texorpdfstring{$\frac{1}{1+x}$}{Lg}}
+\title{In Conclusion}
 \author{by Shengdong Li}
-\date{21 November 2020}
+\date{22 November 2020}
 \maketitle
 
-Stefano, our group member assigned to find the maclaurin series for
-question 5
-$$
-  \frac{1}{1+x}
-$$
-hasn't posted. It's now saturday, and since I had question 4, to find the maclaurin series for
-$$
-  \frac{1}{1-x}
-$$
-I decided to work through his question so I could try and compare these two.
+\section{Taylor Polynomial vs. Taylor Series}
+In Michael Yan's reply to my initial post, I was reminded to simplify the expanded form of the maclaurin series for my assigned functionm, but also questioned about not using $T_{n}(x)$. This lead to me realizing that a taylor polynomial is the partial sum of the derivatives of a function while a taylor series is the infinite sum of the derivatives of a function.
 
-\section{\texorpdfstring{$\frac{1}{1+x}$}{Lg}}
-To find the first five terms of the maclaurin series for $\frac{1}{1-x}$, we have to find the first 5 derivatives of $f(x)$
-\begin{align}
-  f\left(x\right)                  & =\left(1+x\right)^{-1}     \\
-  f'\left(x\right)                 & =-\left(1+x\right)^{-2}    \\
-  f''\left(x\right)                & =2\left(1+x\right)^{-3}    \\
-  f'''\left(x\right)               & =-6\left(1+x\right)^{-4}   \\
-  f^{\left(4\right)}\left(x\right) & =24\left(1+x\right)^{-5}   \\
-  f^{\left(5\right)}\left(x\right) & =-120\left(1+x\right)^{-6} \\
-  \intertext{We know that in a maclaurin series the function is centered at $a=0$. We plugin $0$ into our previously calculated derivatives}
-  f\left(0\right)                  & =1                         \\
-  f'\left(0\right)                 & =-1                        \\
-  f''\left(0\right)                & =2                         \\
-  f'''\left(0\right)               & =-6                        \\
-  f^{\left(4\right)}\left(0\right) & =24                        \\
-  f^{\left(5\right)}\left(0\right) & =-120                      \\
-\end{align}
-We can plug these derivatives into the general formula for taylor polynomials, and write out the expanded form
-\begin{align}
-  \frac{1}{1+x} & =1-x+\frac{2x^{2}}{2!}-\frac{6x^{3}}{3!}+\frac{24x^{4}}{4!}-\frac{120x^{5}}{5!}+\ldots \\
-  \Aboxed{{}    & =1-x+x^{2}-x^{3}+x^{4}-x^{5}+\ldots}
-\end{align}
-Which we could write in summation form as
-\begin{align}
-             & =\sum_{n=0}^{\infty}\left(-1\right)^{n}x^{n} \\
-  \Aboxed{{} & =\sum_{n=0}^{\infty}\left(-x\right)^{n}}
-\end{align}
-Another way to approach finding the summation form of the series is to define $f^{(n)}(x)$. From the derivatives above, we can see that the $n$th derivative $f^{(n)}(x)$ would be alternating $n!$
-\begin{align}
-  f^{\left(n\right)}\left(x\right) & =(-1)^n\cdot n!                                                                       \\
-  \frac{1}{1+x}                    & = \sum_{n=0}^{\infty}\frac{f^{\left(n\right)}\left(x\right)\cdot\left(x-a\right)}{n!} \\
-  \frac{1}{1+x}                    & = \sum_{n=0}^{\infty}\frac{(-1)^n\cdot n!\cdot x}{n!}                                 \\
-\end{align}
-Plugging into the formula, the $n!$s cancel, leaving
-\begin{align}
-             & = \sum_{n=0}^{\infty}(-1)^n\cdot x       \\
-  \Aboxed{{} & =\sum_{n=0}^{\infty}\left(-x\right)^{n}}
-\end{align}
-\section{\texorpdfstring{$\frac{1}{1+2x}$}{Lg}}
-To find the first five terms of the maclaurin series for $\left(1-2x\right)^{-1}$, we have to find the first 5 derivatives of $f(x)$
-\begin{align}
-  f\left(x\right)                  & =\left(1-2x\right)^{-1}      \\
-  f'\left(x\right)                 & =-2\left(1-2x\right)^{-2}    \\
-  f''\left(x\right)                & =8\left(1-2x\right)^{-3}     \\
-  f'''\left(x\right)               & =-48\left(1-2x\right)^{-4}   \\
-  f^{\left(4\right)}\left(x\right) & =384\left(1-2x\right)^{-5}   \\
-  f^{\left(5\right)}\left(x\right) & =-3840\left(1-2x\right)^{-6} \\
-  \intertext{Plugin $x=0$, as maclaurin series are centered at $0$}
-  f\left(0\right)                  & =1                           \\
-  f'\left(0\right)                 & =-2                          \\
-  f''\left(0\right)                & =8                           \\
-  f'''\left(0\right)               & =-48                         \\
-  f^{\left(4\right)}\left(0\right) & =384                         \\
-  f^{\left(5\right)}\left(0\right) & =-3840
-\end{align}
-\begin{align}
-  \intertext{Then we can plug in the results into the taylor formula to get the expanded form with the first $5$ terms}
-  \frac{1}{1+x} & =1-2x+\frac{8x^{2}}{2!}-\frac{48x^{3}}{3!}+\frac{384x^{4}}{4!}-\frac{3840x^{5}}{5!}+\ldots \\
-  \Aboxed{{}    & =1-2x+4x^{2}-8x^{3}+16x^{4}-32x^{5}+\ldots}
-  \intertext{And in summation form}
-                & = \sum_{n=0}^{\infty}\left(-1\right)^{n}\cdot2^{n}\cdot x^{n}                              \\
-  \Aboxed{   {} & = \sum_{n=0}^{\infty}\left(-2x\right)^{n}}
-\end{align}
-\begin{align}
-  \intertext{Another way we could approach finding the summation is to find $f^{(n)}(x)$ and plug that directly into the formula}
-  \frac{1}{1+x}                    & =\frac{f^{\left(n\right)}\left(x\right)\cdot\left(x-a\right)}{n!}  \\
-  f^{\left(n\right)}\left(x\right) & =(-1)^n\cdot n!\cdot2^{n}                                          \\
-                                   & =\sum_{n=0}^{\infty}\frac{(-1)^n\cdot n!\cdot2^{n}\cdot x^{n}}{n!} \\
-                                   & =\sum_{n=0}^{\infty}\left(-1\right)^{n}\cdot2^{n}                  \\
-  \Aboxed{ {}                      & =\sum_{n=0}^{\infty}\left(-2x\right)^{n}}                          \\
-\end{align}
-\section{\texorpdfstring{$\frac{1}{1+x^{2}}$}{Lg}}
-To find the first five terms, find the first $5$ derivatives
-\begin{align}
-  f\left(x\right)                  & =\frac{1}{1+x^{2}}                                                   \\
-  f\left(x\right)                  & =\left(1+x^{2}\right)^{-1}                                           \\
-  f'\left(x\right)                 & =-2x\left(1+x^{2}\right)^{-2}                                        \\
-  f''\left(x\right)                & =-\frac{2\left(1-3x^{2}\right)}{\left(1+x^{2}\right)^{3}}            \\
-  f'''\left(x\right)               & =24x\left(\frac{1-x^{2}}{\left(1+x^{2}\right)^{4}}\right)            \\
-  f^{\left(4\right)}\left(x\right) & =24\left(\frac{5x^{4}-10x^{2}+1}{\left(1+x^{2}\right)^{5}}\right)    \\
-  f^{\left(5\right)}\left(x\right) & =240x\left(\frac{-3x^{4}+10x^{2}-3}{\left(1+x^{2}\right)^{6}}\right) \\
-  \intertext{Next, plugin $x=0$}
-  f\left(0\right)                  & =1                                                                   \\
-  f'\left(0\right)                 & =0                                                                   \\
-  f''\left(0\right)                & =-2                                                                  \\
-  f'''\left(0\right)               & =0                                                                   \\
-  f^{\left(4\right)}\left(0\right) & =24                                                                  \\
-  f^{\left(5\right)}\left(0\right) & =0                                                                   \\
-  \intertext{Plugging the results into the taylor formula can give us the expanded form}
-  \frac{1}{1+x^2}                  & =1-\frac{2x^{2}}{2!}+\frac{24x^{4}}{4!}-\ldots                       \\
-  \Aboxed{{}                       & =1-x^{2}+x^{4}-\ldots}
-  \intertext{And summation form}
-                                   & =\sum_{n=0}^{\infty}\left(-1\right)^{n}x^{2n}                        \\
-  \Aboxed{                         & =\sum_{n=0}^{\infty}\left(-x^{2}\right)^{n}}
-\end{align}
+\section{Shortcuts}
+From my initial post, comparing taylor series between $g(x)=x$, $g(x)=2x$ and $g(x)=x^2$, I think that one possible shortcut to solving the taylor series of $f(g(x))$ already knowing $f(x)$ is just to substitute $g(x)$ into the summation formula.
 
-\section{My observations}
-Immediately, what stood out to me between the maclaurin series for $\frac{1}{1-x}$ and $\frac{1}{1+x}$ is that one could literally drop in the $\pm x$ and get the summation form of the taylor series for each, as shown below.
-$$\sum_{n=0}^{\infty}\left(x\right)^{n}$$
-$$\sum_{n=0}^{\infty}\left(-x\right)^{n}$$
-$$\sum_{n=0}^{\infty}\left(2x\right)^{n}$$
-$$\sum_{n=0}^{\infty}\left(-2x\right)^{n}$$
-$$\sum_{n=0}^{\infty}\left(x^{2}\right)^{n}$$
-$$\sum_{n=0}^{\infty}\left(-x^{2}\right)^{n}$$
-In addition, looking at the above differences the summation form for getting from $x$ to $x^2$ and $x$ to $2x$ for both $\frac{1}{1-x}$ and $\frac{1}{1+x}$ were $also$ drop in replacements...
+Comparing the differences between $\frac{1}{1-x}$ and $\frac{1}{1+x}$ also confirms the aforementioned theory, as substituting $(-x)$ for $x$ in the taylor series for $\frac{1}{1-x}$ gives the taylor series for $\frac{1}{1+x}$.
 
-This leads me to believe that perhaps a possible shortcut for finding the taylor series of functions with similar structures is to look at their $x$s or other variables, and drop in the corresponding $x$ accordingly.
+Finally, from my comment to William's initial post noting the differences between the maclaurin series for $\sin(x)$ and $\cos(x)$, I realized that a shortcut could be taking the derivative of the taylor series of one function to get to the other.
+
+\section{\texorpdfstring{$\frac{x}{1-x}$}{Lg}}
+\begin{align}
+  \intertext{The first five derivatives}
+  f\left(x\right)                  & =\frac{x}{1-x}                                                                      \\
+  f'\left(x\right)                 & =\frac{1}{\left(1-x\right)^{2}}                                                     \\
+  f''\left(x\right)                & =\frac{2}{\left(1-x\right)^{3}}                                                     \\
+  f'''\left(x\right)               & =\frac{6}{\left(1-x\right)^{4}}                                                     \\
+  f^{\left(4\right)}\left(x\right) & =\frac{24}{\left(1-x\right)^{5}}                                                    \\
+  f^{\left(5\right)}\left(x\right) & =\frac{120}{\left(1-x\right)^{6}}                                                   \\
+\end{align}
+Substitute $x=0$
+\begin{align}
+  f\left(0\right)                  & =0                                                                                  \\
+  f'\left(0\right)                 & =1                                                                                  \\
+  f''\left(0\right)                & =2                                                                                  \\
+  f'''\left(0\right)               & =6                                                                                  \\
+  f^{\left(4\right)}\left(0\right) & =24                                                                                 \\
+  f^{\left(5\right)}\left(0\right) & =120                                                                                
+\end{align}
+\begin{align}
+  \intertext{expanded form}
+  \frac{x}{1-x}                    & =0+x+\frac{2x^{2}}{2!}+\frac{6x^{3}}{3!}+\frac{24x^{4}}{4!}+\frac{120x^{5}}{5!}+... \\
+  \Aboxed{\frac{x}{1-x}                    & =x+x^{2}+x^{3}+x^{4}+x^{5}+...}
+\end{align}
+\begin{align}
+  \intertext{evaluating it directly, we can see that the expanded form is the same as $\frac{1}{1-x}$, just ``shifted over'' by 1, hence the $+1$}
+  \Aboxed{\frac{x}{1-x}                    & =\sum_{n=0}^{\infty}x^{n+1}}
+\end{align}
+\section{Shortcut}
+\begin{align}
+  \intertext{because in the context of the summation, $x$ doesn't change, the shortcut would probably be to just multiply it in}
+  \frac{1}{1-x}                    & =\sum_{n=0}^{\infty}x^{n}                                                           \\
+  \frac{x}{1-x}                    & =\sum_{n=0}^{\infty}x^{n}\cdot x                                                    \\
+  \frac{x}{1-x}                    & =\sum_{n=0}^{\infty}x^{n+1}                                                         
+\end{align}
 \end{document}
