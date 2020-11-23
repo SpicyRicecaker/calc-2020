@@ -28,7 +28,7 @@ const isInsideTime = (startTime: string, endTime: string, date: Date) => {
     date.getHours() * 60 +
     date.getMinutes() -
     (startNums[0] * 60 + startNums[1]);
-  return currentDiff > -1 && currentDiff < classTime;
+  return currentDiff >= -5 && currentDiff < classTime;
 };
 
 const asyncTimeout = (callback: any, time: number) =>
