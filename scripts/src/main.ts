@@ -13,7 +13,7 @@ dotenv.config();
 // parse and compare minute hour string
 // given hours and minutes of the form
 const isInsideTime = (startTime: string, endTime: string, date: Date) => {
-  // find startTime hours?
+  // Get start hour, start minutes, end hour, end minutes
   const startStrs = [...startTime.split(':'), ...endTime.split(':')];
   const startNums = startStrs.map((value) => parseInt(value, 10));
   // let timeRange = {
@@ -22,13 +22,17 @@ const isInsideTime = (startTime: string, endTime: string, date: Date) => {
   //   endHour: startNums[2],
   //   endMinutes: startNums[3],
   // };
+  // Get the amount of time in class by subtracting start by endtime
   const classTime =
     startNums[2] * 60 + startNums[3] - (startNums[0] * 60 + startNums[1]);
+  // Gets the amount of time between now and the beginning of class
   const currentDiff =
     date.getHours() * 60 +
     date.getMinutes() -
     (startNums[0] * 60 + startNums[1]);
-  return currentDiff >= -5 && currentDiff < classTime;
+  // If the time between now and the beginning of class is greater than -6 (5 min early)
+  // but less than the full length of the actual class, then this class is within time
+  return currentDiff >= -6 && currentDiff <= classTime;
 };
 
 const asyncTimeout = (callback: any, time: number) =>
@@ -39,7 +43,6 @@ const signIntoGoogle = async (browser: Browser) => {
   const page = await browser.newPage();
 
   await page.goto('https://accounts.google.com');
-  const navigationPromise = page.waitForNavigation();
 
   await page.waitForSelector('input[type="email"]');
   await page.type('input[type="email"]', process.env.GOOGLE_USER as string);
@@ -51,7 +54,7 @@ const signIntoGoogle = async (browser: Browser) => {
   await page.waitForSelector('#passwordNext', { visible: true });
   await page.click('#passwordNext');
 
-  return navigationPromise;
+  return page.waitForNavigation();
 };
 
 const openZoomLink = async (browser: Browser, link: string): Promise<any> => {
