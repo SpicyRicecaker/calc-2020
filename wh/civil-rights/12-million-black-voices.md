@@ -1,0 +1,60 @@
+# Richard Wright: 12 Million Black Voices
+## Focus Qs
+- How did Wright describe the reasons for the Great Migration? Why did Black people leave the south?
+- How did Wright describe the life Blacks found in the north?
+- What are you thinking, noticing, wondering, or feeling about what you read?
+## Simple Qs
+- What was life like in the south and why did African Americans leave
+- What was new life like in the north
+- Annotate what you read
+## Notes
+- 2
+  - African Americans stand in a long line
+  - One Each person has really tattered clothes
+  - One woman seems to be using a sack as a skirt
+  - Some people held meagre belongings, some none at all
+- 3
+  - A white person stands besides a truck with many African Americans on it
+  - "The bosses" are the ones bringing them someplace
+- 4
+  - They do work in "the farm facotries"
+  - Backs hunched picking cabbagges and putting them inside baskets
+- 5
+  - An African American kneeling in the dirt, in the fields
+- 6
+  - African Americans sleeping, no mattresses, three people in one room, barely any blankets, no pillows, 
+- 7 
+  - "Wooden baracks" 
+  - Small, cramped, dirty, dimly lit
+- 8
+  - To where they travel, the same slave labour awaits them
+  - WWI lead to the industrial age, with many factories, call of African Americans in the south to move up
+  - Again they fear that this slave labour will be there, and they know that they'll be giving up their homes again
+  - The plantation owners become really nice to get them to stay, but ultimately they don't care as long as one goes to one plantation or another. 
+  - If an African American goes against the law, they are fined, then they're forced to pay it off by working
+- 9 
+  - Benefits of the north are supposedly really great, voting, better housing, eduction, no lynching, new exciting jobs rather than farm
+  - Coming from all the African American newspapers, friend goes and sends letters back of promise
+  - People try to get to railroads and get money however they can
+  - Plantation owners start to get worried and convince African Americans to say good things about them
+- 10
+    - African American veterans were discriminated in the army, coming home they're proud and in uniform, with so much experience in battle, with people of other nations, and they're lynched by plantation owners all the same.
+- 12
+  - Rickety, old house, titled "Death on the City Pavements"
+- 14
+  - Many African Americans were leaving, 1890 1,500,000, 1900 2,000,000, 1920, 3,500,000, and even poor white families
+  - "When a man lives upon the land and is cold and hungry and hears word of the great factories going up in th ecities, he begins to hope and dream of a new life, and he leaves."
+    - Newly free when they went to cities,
+    - Did not own any land
+    - No material belongings,
+    - Did not belong to any organization
+- 17
+  - African Americans were really hopeful as they crossed the ohio rivier. They were happy that they would leave the old life behind
+  - The speech in the north is much faster than the south, and there are foreigners that live in cities.
+  - In northern cities there are no for colored and for white signs, many white people are indifferent to their prescence. 
+  - The north is very hard and businesslike, with set times for everything and is captialistic, while in the south things are slow and I guess events sare plain to see
+- 20
+  - There is not enough housing for African Americans moving into the north, and poor migrant whites are also competimng for housing
+  - Building costs are very high
+  - They live in areas where factories and exhaust stains clothes and lungs
+## Answers
