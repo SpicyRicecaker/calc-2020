@@ -1,1 +1,1 @@
-powershell.exe -command "node dist/main.js"
+powershell.exe -command "yarn class"
