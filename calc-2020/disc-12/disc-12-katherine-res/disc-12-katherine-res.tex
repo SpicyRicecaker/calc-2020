@@ -1,0 +1,68 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Katherine Roth}
+\author{by Shengdong Li}
+\date{4 December 2020}
+\maketitle
+
+Hello Katherine!
+Thank you so much for replying to my initial post. 
+
+I want acknowledge your reaffirmation of the fact that Taylor series are not very pratical for functions with a lot of bends, and I also agree with your point that in this situation, Riemann sums were the easiest to calculate and still provided the best result. 
+
+The results of your Riemann Sums calculation after doubling the amount of strips to $n=8$ was extremely surprising to me. This was because the answer of $9.045$ was only $.005$ off of the answer that I got using $n=4$! 
+
+I'll definitely keep the effectiveness of Riemann sums over Taylor series in this problem in mind, or their use in large bounds for functions in general. 
+
+Again, thank you so much for replying to my initial post!
+\bigskip
+
+Cheers,
+
+-Andy
+
+\end{document}
