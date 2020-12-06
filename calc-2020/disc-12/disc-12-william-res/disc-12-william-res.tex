@@ -1,0 +1,123 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to William Zhang}
+\author{by Shengdong Li}
+\date{5 December 2020}
+\maketitle
+
+Hey William,
+Great job with the initial post!
+
+I think that using the maclaurin taylor shortcut by substituting $x^2$ for $x$ in $\cos(x)$
+\begin{align*}
+  \cos\left(x\right)     & =\sum_{n=0}^{\infty}\frac{\left(-1\right)^{n}\cdot x^{2n}}{\left(2n\right)!} \\
+  \cos\left(x^{2}\right) & =\sum_{n=0}^{\infty}\frac{\left(-1\right)^{n}\cdot x^{4n}}{\left(2n\right)!}
+\end{align*}
+
+was a great way to approach the problem and it saved a lot of time versus deriving the formula by hand. 
+
+Since we have the formula that you provided, I wanted to verify your problem but also see how much difference adding additional terms to the taylor polynomial would affect its accuracy compared to decreasing step size for Riemann sums would be. 
+
+\section{Data}
+
+Below, I calculated the values from the 0th to 40th degree Taylor polynomial and compare it to Riemann's down to a step size of $0.05$.
+
+Please take a look at the table below and embedded gifs attached to the post...
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{|l|l|l|l|}
+      \hline
+      n  & Taylor (Maclaurin) & n  & Riemann's (Simpson's) \\ \hline
+      0  & 1                  & 0  & DNE                   \\ \hline
+      1  & 0.9                & 2  & 0.904501265751        \\ \hline
+      2  & 0.90462962963      & 4  & 0.904522924978        \\ \hline
+      3  & 0.904522792023     & 6  & 0.904522924978        \\ \hline
+      4  & 0.90452425094      & 8  & 0.904524159207        \\ \hline
+      5  & 0.904524237817     & 10 & 0.904524267862        \\ \hline
+      6  & 0.904524237901     & 12 & 0.904524268425        \\ \hline
+      7  & 0.9045242379       & 14 & 0.904524259569        \\ \hline
+      8  & 0.9045242379       & 16 & 0.904524252568        \\ \hline
+      9  & 0.9045242379       & 18 & 0.904524247896        \\ \hline
+      10 & 0.9045242379       & 20 & 0.904524244851        \\ \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+\subsection{Graphical Representation}
+\begin{itemize}
+  \item \href{https://www.desmos.com/calculator/coyobiwoqn}{Taylor}
+  \item \href{https://www.desmos.com/calculator/4ivy2vkqny}{Riemann}
+\end{itemize}
+
+Please also see embedded gifs below!
+
+\section{Observations}
+\subsection{Table}
+First of all, in your initial post, you mentioned how the integral of $T_{4}(x)$ had less decimals compared to Riemann's with $n=10$, and thus looked less accurate. While later on in the table there are more decimals for taylor polynomials, I still agree with your initial claim.
+
+Riemann's was insanely accurate up to the ten thousandths place even just at $n=2$, with a big step size of $0.5$! Meanwhile, Taylor starts out much more innacurate with an accuracy at only the tenths, and only gets accurate up to the ten thousandths at the $12$th degree, or when $n=3$.
+
+However, we can also see that from basically $n=6$ and onward, the value that Taylor gives for the area is very stable, with the numbers not even shifting at all up to the tenth decimal place. Meanwhile, Riemann Sums still resulted in small shifts in value with every step size. 
+
+\subsection{Graph}
+Taking a look at the graphs, we can see what is happenning to both methods of approximation. First looking at Riemann's, at $n=2$ it basically covered the whole area under the graph, while the $4$th degree taylor polynomial $T_{4}(x)$ is just a little bit too low. 
+
+Overtime, after a few increases in $n$, we can see that the Taylor polynomial starts to match up to the function exactly, and goes on to match the further left and right bounds of the function. 
+
+\section{Conclusion}
+This great accuracy given just a sizeable amount of derivatives past the center of taylor polynomials compared to the Riemann Sum's relative instability after quite a period of time leads me to believe that Taylor will be more accurate than Riemann's. However, if a function has many bends, then Riemann's might be better.
+
+This makes me wonder if centering the Taylor series at the center of the bounds, $x=0.5$, might make it slightly more accurate, but it is a lot of work to deriviate.
+
+Do you agree with my conclusion? Please feel free to comment, I look forward to future discussion!
+
+\bigskip
+
+Cheers,
+
+-Andy
+
+\end{document}
