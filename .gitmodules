@@ -1,0 +1,3 @@
+[submodule "scripts/autohtml_node"]
+	path = scripts/autohtml_node
+	url = https://github.com/SpicyRicecaker/autohtml_node.git
