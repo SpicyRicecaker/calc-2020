@@ -1,0 +1,94 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{In Conclusion}
+\author{by Shengdong Li}
+\date{6 December 2020}
+\maketitle
+
+While in this week's discussion, I did manage to solve my initial problem of 
+$$
+  xe^{-x^{3}}
+$$
+it was not before messing up and accidentally solving William's problem of
+$$
+  \cos(x^2)
+$$
+first.
+
+So while doing double the workload really sucked, I think that it was still practice and allowed me to discern more differences between Taylor Series and Riemann Sums.
+
+\section{Taylor Series}
+From my observations of Taylor Series, I noticed a few qualities.
+\begin{itemize}
+  \item From my comment to William comparing the differences of the different degree of Taylor polynomials for $\cos(x)$, I found out that after a certain number of terms are added to the taylor polynomial to calculate a bound, it becomes very accurate. From $n=7$ onwards, the area seemed to not change at all up to the $10$th decimal place.
+  \item However, in the beginning it seems to be very innaccurate, with the difference of the fourth degree polynomial with the later degree polynomials being more than $.004$
+  \item Over a long bound or if there are a lot of bends within the bounds of a function, Taylor can become exponentially innaccurate. I noticed this in the graph of $\cos(x)$ compared to its $4$th degree Taylor polynomial, which kept going downwards instead of up. In a comment to my post, Katherine also agreed that more bends could make Taylor less accurate
+\end{itemize}
+
+\section{Riemann Sums}
+\begin{itemize}
+  \item Riemann Sums is much much easier to calculate than Taylor series, requiring only basic algebra.
+  \item It's also much more accurate than Taylor with less strips/step size vs. terms in the Taylor polynomial. Katherine's calculation of doubling the $n$ value or the number of strips in Riemann sums only led to a difference in the thousandths at $0.005$.
+  \item However, continuing with the previous point it becomes less good compared to Taylor with many more terms, as Taylor is accurate up to the $10$th decimal place whereas Taylor still keeps changing its $8$th decimal place at $n=20$.
+  \item If not using Simpson's rule, the difference is rather large. In Williams comment to my initial post, he found that using trapezoid rule led to a difference greater than $0.1$!
+\end{itemize}
+
+From these observations and analyses about Taylor series and Riemann sums, I came to the conclusion that to get the general idea of the area of a function, use Riemann Sums. However, if one wanted to know the specific part of a function very well, Taylor should be used instead.
+
+\section{Exact value}
+With the use cases of Taylor Series and Riemann Sums in mind, to get the exact value of
+$$
+  \int_{0}^{1}xe^{-x^{3}}dx
+$$
+down to the thousandths, I decided to add terms to the Taylor polynomial until it did not change at the thousandths place any more.
+
+This occured at $n=5$, and I found that
+$$
+  \int_{0}^{1}\left(\sum_{n=0}^{5}\frac{\left(-1\right)^{n}\cdot x^{3n+1}}{n!}\right)dx = 0.3498\ldots
+$$
+which, rounded to the nearest thousandths is $\boxed{0.350}$.
+\end{document}
