@@ -1,0 +1,93 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Adithi Mahankali}
+\author{by Shengdong Li}
+\date{17 December 2020}
+\maketitle
+
+Hello Adithi, 
+
+Great job with the initial post! It was very clear and concise, and you posted really early as well.
+
+As I'm sure you know, I had the epicyloid parametric equation, and building off on your reply to my initial post, I'd like to affirm again that scaling of the asteroid graph is directly proportional to $a$, and I think that at this point we've shown that parametric equations with $\sin$ and $\cos$ scale almost exactly the same as you would expect a circle to. 
+
+Furthermore, with $a$ being $0$ the graph also didn't exist for the epicycloid. Even with the extra $b$ constant, when $a$ equalled $0$, the $b$ actually cancelled out the equation to $0$. 
+
+Another thing that I noticed about the asteroid graph is that the $t$ required to draw the entire star is the period of the $\sin$ and $\cos$ functions. With the default parametric at $a=1$
+$$
+\left(\cos^{3}t,\ \sin^{3}t\right)
+$$
+the star is completed when $t=2\pi$.
+However, if we add an extra $\frac{1}{4}$ to the inside of the sinusoids, the parametric becomes
+$$
+\left(\cos^{3}\frac{t}{4},\ \sin^{3}\frac{t}{4}\right)
+$$
+so the period of $\cos$ and $\sin$ then becomes
+$$
+\frac{2\pi}{\frac{1}{4}}=8\pi
+$$
+and the asteroid completes at 
+$$
+t=8\pi
+$$
+Compared to the epicyloid, 
+$$
+x(t)=\left(a+b\right)\cos t-b\cos\left(\left(\frac{a}{b}+1\right)t\right)
+$$
+and
+$$
+y(t)=\left(a+b\right)\sin t-b\sin\left(\left(\frac{a}{b}+1\right)t\right)
+$$
+it had an $a$ and $b$ value, but actually, the $a$ value didn't seem to have any impact on when the function completed, it only seemed like the $b$ value was based off of the period, where
+$$
+T=\frac{2\pi}{\frac{1}{b}}
+$$
+You can take a look at the Desmos graph \href{https://www.desmos.com/calculator/1obgsminu6}{here}
+
+That's what I noticed, great job on the initial post Adithi!
+
+\end{document}
