@@ -1,0 +1,65 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Westin Boyd}
+\author{by Shengdong Li}
+\date{20 December 2020}
+\maketitle
+
+Hello Westin,
+
+I found it really interesting that you talked in your post about how negative constants can completely change the shape of your graph. 
+
+Negative constants were something that I played around with but never considered in the beginning because I couldn't and still can't figure out the period for Desmos graphs. As a result, I thought that they were super buggy because the graph would keep changing as $t$ increases. 
+
+From your post, I realize now that negative constants are very important to consider! The sharp vertices made me realize that $\left|\frac{a}{b}\right|$ actually determines the number of "vertices" for the graph, which is more important than I realized because at $a=-4$ and $b=1$ we get the asteroid graph! It's so impressive how epicycloid can seem to change into a lot of the other graphs in our discussion.
+
+This also explains why when $a$ is a decimal, like say $a=1.1$, the graph becomes very complicated, because a decimal vertex would shift the graph over with each iteration of $t$.
+
+Thanks, 
+
+Andy
+\end{document}
