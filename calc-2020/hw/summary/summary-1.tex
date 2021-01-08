@@ -1,0 +1,85 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\frenchspacing
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{
+Summary of ``Math for rapid identification of SARS-CoV-2 and other disease causing pathogens and mutations using high-resolution melting analysis''
+}
+\author{by Shengdong Li}
+\date{7 January 2020}
+\maketitle
+
+This is a summary of ``Math for rapid identification of SARS-CoV-2 and other disease causing pathogens and mutations using high-resolution melting analysis'' by Bob Palais, from Utah University.
+
+One reason that Bob was interested in this topic is because Elizabeth Copene was Bob's former math student. Elizabeth was able to develop this technology along with Tom Robbins at Biofire, which helped with ebola and is also helping identify CoVid-19, with 1 billion sales this year. CoVid is also an issue for all of us, so research going into the virus is also very valuable.
+
+Bob found that when strands of DNA went from separated to double strands, there is a very slight thermodynamic change. Very sensitive dyes that were high resolution could measure this change, but they also couldn't affect the separating process of the DNA\@. 
+
+The procedure is, by taking a sample of DNA from someone, then putting it in a dye film for 30 minutes, you could then retrieve some data of the graph of the fluorescence (color) over temperature $\frac{Fluorescence}{temperature}$. This then requires many more algorithms and formulas to be applied to this data, to eventually get into a graph of the change in temperature over time$\frac{\frac{dT}{dt}}{t}$. This curve can be used to distinctly identify CoVid, and rule out the many other types of diseases with similar symptoms. 
+
+\section{Math Recognized} 
+The most obvious math that I recognized was the derivative curve of Derivative curves $\frac{\frac{dT}{dt}}{t}$, which Bob mentioned could be used to distinctly identify the melting curve of Covid-19, and thus the virus itself.
+
+Bob also mentioned something about negative derivatives, and using their peaks to help in finding the value of $\frac{\frac{dT}{dt}}{t}$. While I had no idea what the algorithm was about, I did realize that to find the critical points of a curve was something that we did in the past, and could be done by finding the zeros of the derivative of the curve. 
+
+Bob also mentioned many established formulas, and while I had no idea that they existed, he made the principles sound very simple. For example, Hoff's law could be used to find the chemical equilibrium using entropy and enthropy, and entropy and enthropy, while complicated, could also be represented using slope and an intercept. 
+
+Bob also mentioned something about Beer's law in fitting exponential curves (like temperature), and temperature not requiring an amplitude, so I wonder if Taylor polynomials have anything to do with it.
+
+\section{Observations / Wonder}
+I found it really interesting that Bob mentioned that if you have a cought you have a good chance of having a lot of other things, but you need to identify what it is. This makes me wonder if this high-resolution melting dye could be useful, with the flu season rolling around in the winter-springtime. 
+
+I also wonder about the costs of this dye and, seeing its speed of 30 minutes, whether it would be more useful than temperature tests. 
+
+\section{Future / Other}
+One thing that I noticed was that Bob mentioned that temperature was $e^{-}$ because it is naturally like that. It is inversely proportional to the natural thing. While I don't really know what this means because I barely understood anything from the talk, I did realize that I did do something integrations with $e^{-}$ earlier and I think that it shows that just because variables may look weird it doesn't mean that they aren't useful.
+
+Taking the dot products of each sequence of AGCT, by looking at the neighboring pairs, and adding them up is a reason that I'd be motivated in learning dot products in the future. 
+
+The use of many algorithms and formulas that I've never heard of, such as Hoff's equation, Poland's Algorithm, and Beers law, while it does make me worry that I would have to be pulling from seemingly obscure algorithms in the future, I realize that most of them pull from fundamental concepts, even to the point of just slope intercepts, which makes me realize that it's important to pay attention in math and have solid foundationals. 
+
+\end{document}
