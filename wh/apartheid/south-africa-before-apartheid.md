@@ -57,7 +57,7 @@ Apartheid in South Africa lasted from 1948 to 1990, and it was separation of all
 Around the 1500s, trading with China became slower, and as a result South Africa became an appealing trade destination. 
 
 ### The Xhosa were able to resist whites more than the Khoisan. Why?
-The Xhosa were probably able to resist whites more than the Khoisan, just mostly becaus of chance by where the Dutch landed. The Dutch brought goods that disrupted the economy but also disease that significantly reduced the Khoisan populariont. 
+The Xhosa were probably able to resist whites more than the Khoisan, just mostly becaus of chance by where the Dutch landed. The Dutch brought goods that disrupted the economy but also disease that significantly reduced the Khoisan population. 
 
 The Xhosa were also more unified. 
 
