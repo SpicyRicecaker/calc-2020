@@ -1,0 +1,77 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage
+}
+
+% Makes links look more appealling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\frenchspacing
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{
+  Summary of ``Prisoners, Rooms, and Light-switches (Pure Math/Games)''
+}
+\author{by Andy Li}
+\date{8 January 2020}
+\maketitle
+
+This is a summary of ``Prisoners, Rooms, and Light-switches (Pure Math/Games)'', by Scott Duke Kominers from Harvard University.
+
+Scott's game was based of another game. The rules of the game go like this: there are \(n\) prisoners and a single light switch in a single room. The warden randomly chooses a prisoner each day to visit this room, and they're only allowed to interact with the light switch. At anytime a prisoner may declare that prisoners have visited the room. 
+
+The solution for this game was to have one person declared the leader, whose only role is to turn on the lights when they find, and all the other prisoners turn off the lights the first time that they see it lit. Then when the first prisoner turns off the light for \(n-1\) times, they can finally declare that all prisoners have visited the room.
+
+Scott's game takes it to the next level, by introducing \(r\) indistinguishable rooms that the \(n\) prisoners could be chosen to visit, and asking for the \(s\) amount of switches that the prisoners would be able to safely declare that they've each visted each room \(k\) amount of times. 
+
+He found that one could use decreasing amounts of \(s\) with increasingly complex algorithms. The easiest algorithm but with the most \(s\) would be just to use the switches to encode data to label prisoners, rooms, and whether they've visited that room or not. Next is by using unary operators, which I still don't really understand how it's used in the switches but is more efficient than encoding everything and leaves \(r + n \cdot k\) switches. Then next solution could be using the solution for the one room \(k\) times each, resulting in just \(r + 1\) switches. Using binary, the rooms could then be labeled as \(\log_{2}(r)+1\). This number could be brought down even further by using one active room at a time and just \(3\) switches. The leader declares one room as active using the first swtich, the second switch is used to play the one room strat, and the final strat is used to declare the room as finished. This number could then finally even brought down even more to just two switches. This time, there's a whole new layer of leadership. If a prisoner sees \textit{on on} they become active, flipping all rooms by one switch at a time to get to \textit{off on} position. The overall leader, if they see \textit{on off} they switch it to \textit{on on} and keep track, until they get to \(n-1\).
+
+Scott basically concluded saying that one switch is not enough for this, and mentioning that an unknown starting config would be impossible, along if prisoners were somehow forced to use identical strategies. Basically 2 suffices, and 1 room could be done with \(s - 1\). 
+
+It is unknown if there could be an algorithm used with 3 states, since 2 switches could represent 4 states and 1 switch could represent two states. 
+
+\section{Reflection} 
+Honestly I didn't recognize anything that I learned in calc that had any relation to this problem. However, it did make me realize how inefficient naive approaches are compared to having a solid algorithm; the required number of switches from labelling everything to playing the one room strat multiple times is an insanely big difference.
+
+The repeated usage of a `leader' in these algorithms to record info also made me realize was something that was also very interesting to me, as the leader would be able to count all the way up to \(n-1\) prisoners, using data recieved just one light switch. 
+
+Thinking about solving the easier variant of the problem once again reminded me that for difficult questinos, it's very helpful to break it down into smaller pieces and have examples to compare the algorithm to, or even adding smaller algorithms up into a bigger one, instead of just thinking up a storm and suffering from analysis paralysis.
+
+\end{document}

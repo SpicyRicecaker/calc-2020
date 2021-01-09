@@ -44,13 +44,38 @@
 % \usepackage{indentfirst}
 
 \begin{document}
-\title{In Conclusion}
+\title{Disc 15 Intro}
 \author{by Shengdong Li}
 \date{7 January 2021}
 \maketitle
-ffffffffffffffffff
-ffffffffffffffffffffffffffff
-ffffffffffffffffffffffffffffffff
 
+Hello everyone, I was assigned
+\[
+xy=12
+\]
+\begin{align*}
+\intertext{To get it into parametric form, first put it into slope intercept form}
+y&=\frac{12}{x}\\
+\intertext{We can replace $\frac{12}{x}$ with $t$, then solve for $x$}
+t&=\frac{12}{x}\\
+x&=\frac{12}{t}\\
+\intertext{As a result}
+y&=t\\
+\intertext{And we're left with}
+  \Aboxed{c\left(t\right)&=\left(\frac{12}{t},\ t\right)}
+\intertext{To get it into polar form, we just need to remember}
+x&=r\cos\theta\\
+y&=r\sin\theta\\
+\intertext{Then plugin and solve for $r$}
+r^{2}\sin\theta\cos\theta&=12\\
+r^{2}&=\frac{12}{\sin\theta\cos\theta}\\
+r&=\sqrt{\frac{12}{\sin\theta\cos\theta}}\\
+\intertext{Recall that }
+2\sin\theta\cos\theta&=\sin2\theta\\
+\sin\theta\cos\theta&=\frac{1}{2}\sin2\theta\\
+\intertext{Plugin}
+r&=\sqrt{\frac{12}{\frac{1}{2}\sin2\theta}}\\
+\Aboxed{r&=2\sqrt{6\csc2\theta}}
+\end{align*}
 
 \end{document}
