@@ -1,0 +1,15 @@
+{
+  "name": "haelin-res",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "xdg-open *.html",
+    "dev": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
