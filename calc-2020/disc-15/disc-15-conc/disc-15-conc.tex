@@ -1,0 +1,76 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage{}
+}
+
+% Makes links look more appealing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{In Conclusion}
+\author{by Shengdong Li}
+\date{10 January 2021}
+\maketitle
+
+In this week's discussion, there wasn't much new material covered, however, I was still able to practice converting from and to polar and parametric equations, and also was reminded of a couple concepts having to do with each.
+
+Looking over all the equations that I was able to look over and convert this week,
+\begin{align*}
+  \intertext{Mine}
+	xy                         & =12                   \\
+	&\left(\frac{12}{t},\ t\right)                      \\
+	r                          & =2\sqrt{6\csc2\theta} \\
+  \intertext{Malea's}
+	\left(x-1\right)^{2}+y^{2} & =1                    \\
+	&\left(\cos t+1,\ \sin t\right)                     \\
+	r                          & =2\cos\theta          \\
+  \intertext{Rita's}
+	y                          & =x\sqrt{3}            \\
+	&\left(\frac{\sqrt{3}}{3}t,t\right)                 \\
+	\theta                     & =\frac{\pi}{3}        \\
+\end{align*}
+One thing that I noticed was that polar equations seemed to be in a form that everyone could agree upon. Maybe slightly more simplification here and there, but overall it usually has the same converted form.
+
+Parametric equations, on the other hand, were like the complete opposite of that. In my comment to Rita's equation, I suggested setting the entire term \(t=x\sqrt{3}\), instead of just \(t=x\), and we ended up with parametric equations that had different equation forms but the same graphical form. Then in Rita's comment to my initial post, she also converted the cartesian equation into a different parametric form again setting \(t=x\) and getting a different but equivalent form. 
+
+
+In these comments, this discussion reminded me that there are basically an infinite number of ways to write parametric equations, with different relavence depending on the problem at hand. 
+
+\end{document}
