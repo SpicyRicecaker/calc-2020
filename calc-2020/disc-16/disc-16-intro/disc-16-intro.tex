@@ -1,0 +1,209 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+% Images and drawing graphs
+\usepackage{tikz}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage{}
+}
+
+% Makes links look more appealing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Disc 16 Intro}
+\author{by Shengdong Li}
+\date{21 January 2021}
+\maketitle
+
+\section{Setup}
+
+Using Google RNG, the random numbers that I recieved were
+\[5, 4, 10, 2\]
+Using these numbers, I was able to generate the initial point \(P\left(5, 4\right)\) and terminating point \(Q\left(10, 2\right)\) to create vector \(\vec{PQ}\).
+
+\section{Components of Vector}
+
+\begin{align*}
+	\vec{V} & = \begin{bmatrix}10-5 \\ 2-4\\\end{bmatrix} \\
+	        & = \begin{bmatrix}5 \\-2\end{bmatrix} \\
+	V_x     & = 5                         \\
+	V_y     & = -2
+\end{align*}
+
+\section{Unit Vector}
+To find the unit vector, recall that
+\begin{align*}
+	V & = \left\lVert V \right\rVert\cdot U    \\
+	U & = \frac{V}{\left\lVert V \right\rVert}
+\end{align*}
+where \(U\) is the unit vector.
+\begin{align*}
+	\intertext{Therefore, first calculate the magnitude}
+	\left\lVert V \right\rVert & = \sqrt{5^ {2}+{(-2)}^ {2}}                    \\
+	                           & = \sqrt{25 + 4}
+	                           & = \sqrt{29}
+	\intertext{Then we can calculate the unit vector by dividing the components}
+	U                          & = \frac{1}{\sqrt{29}}\begin{bmatrix}
+		5 \\
+		-2
+	\end{bmatrix} \\
+	                           & = \begin{bmatrix}
+		\frac{5\sqrt{29}}{29} \\
+		\frac{-2\sqrt{29}}{29}
+	\end{bmatrix}
+\end{align*}
+
+
+\section{Adding New Vector}
+Once again, using Google RNG, the random numbers that I recieved were
+\[
+	10, 4, 2, 5
+\]
+Using these numbers, I was then able to generate the initial point \(A\left(10, 4\right)\) and terminating point \(B\left(2, 5\right)\) to create vector \(\vec{AB}\).
+
+Then calculating the components gives
+\begin{align*}
+	V           & = \begin{bmatrix}
+		2 - 10 \\
+		5 - 4
+	\end{bmatrix}                             \\
+	            & = \begin{bmatrix}
+		-8 \\
+		1
+	\end{bmatrix}
+	\intertext{Then we can add the components of the two vectors together}
+	V_1 + V_2   & = \begin{bmatrix}
+		5 \\ -2
+	\end{bmatrix} + \begin{bmatrix}
+		-8 \\ 1
+	\end{bmatrix} \\
+	\Aboxed{V_R & = \begin{bmatrix}
+			-3 \\ -1
+		\end{bmatrix}}
+\end{align*}
+\section{Creating a Square}
+Graphing the vector from problem 1 \(\vec{PQ}\) with points \(P\left(5, 4\right)\) and \(Q\left(10, 2\right)\) would look something like this:
+\begin{figure}[H]
+	\begin{center}
+		\begin{tikzpicture}[x=0.4cm,y=0.4cm]
+			\draw[latex-latex, thin, draw=gray] (-4,0)--(16,0) node [right] {$x$}; % l'axe des abscisses
+			\draw[latex-latex, thin, draw=gray] (0,-4)--(0,10) node [above] {$y$}; % l'axe des ordonnées
+			\draw [dotted, gray] (-4,-4) grid (16,10);
+
+			\coordinate (P) at (5, 4);
+			\coordinate (Q) at (10, 2);
+
+			\foreach \coordinate\n in {(P)/P, (Q)/Q}
+				{
+					\node[circle,inner sep=1pt,fill=black,label=above:\n] at \coordinate {};
+				}
+
+			\draw[->, draw=red] (P) -- (Q);
+		\end{tikzpicture}
+	\end{center}
+\end{figure}
+
+To make a square, we know that all the sides have to be the same length, and there are two unique slopes, each perpendicular to each other. This works pretty nicely with vectors, since we know that in order for vectors to be equal, they must have the same magnitude; if they have the same magnitude, then the vectors must be equivalent. Knowing this, let's first find the slope of the vector in problem 1 \(\vec{PQ}\) and then use that to find the perpendicular vector. From the formula for slope
+\[
+	m=\frac{y_{2}-y_{1}}{x_{2}-x_{1}}
+\]
+We actually already know \(\frac{dy}{dx}\) from our vector components: plugging in \(\begin{bmatrix}5 \\-2\end{bmatrix}\) into the formula, we get
+\begin{align*}
+	m                                    & =-\frac{2}{5} \\
+	\intertext{To get the perpendicular vector, we just find the negative reciprocal of that}
+	-\left(\frac{1}{-\frac{2}{5}}\right) & =\frac{5}{2}
+\end{align*}
+
+Now we know that the component form of our next vector is \(\begin{bmatrix}2 \\5\end{bmatrix}\), so if we attach the \(\frac{dy}{dx}\) to our starting point of \(P\left(5, 4\right)\), we would then get the point \(R\left(7, 9\right)\). Thus vector \(\vec{PR}\) is formed, resulting in
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{tikzpicture}[x=0.4cm,y=0.4cm]
+			\draw[latex-latex, thin, draw=gray] (-4,0)--(16,0) node [right] {$x$}; % l'axe des abscisses
+			\draw[latex-latex, thin, draw=gray] (0,-4)--(0,10) node [above] {$y$}; % l'axe des ordonnées
+			\draw [dotted, gray] (-4,-4) grid (16,10);
+
+			\coordinate (P) at (5, 4);
+			\coordinate (Q) at (10, 2);
+			\coordinate (R) at (7, 9);
+
+			\foreach \coordinate\n in {(P)/P, (Q)/Q, (R)/R}
+				{
+					\node[circle,inner sep=1pt,fill=black,label=above:\n] at \coordinate {};
+				}
+
+			\draw[->] (P) -- (Q);
+			\draw[->, draw=red] (P) -- (R);
+		\end{tikzpicture}
+	\end{center}
+\end{figure}
+
+We know that the next two vectors are just parallel to the vectors that we already have. Let's say we start at point \(R\), we know that this vector must be parallel to vector \(\vec{PQ}\), which has a component form of \(\begin{bmatrix}5 \\-2\end{bmatrix}\). Point \(S\) would be the sum of the components of \(\vec{PQ}\) along with coordinates of \(R\)
+\begin{align*}
+	 S & = (7 + \vec{PQ}_x, 9 + \vec{PQ}_y) \\
+	 & = (7 + 5, 9 + -2)                    \\
+	 & = (12, 7)
+\end{align*}
+This gives us the endpoints for both vector \(\vec{RS}\) and \(\vec{QS}\), resulting in the final square
+\begin{figure}[H]
+	\begin{center}
+		\begin{tikzpicture}[x=0.4cm,y=0.4cm]
+			\draw[latex-latex, thin, draw=gray] (-4,0)--(16,0) node [right] {$x$}; % l'axe des abscisses
+			\draw[latex-latex, thin, draw=gray] (0,-4)--(0,10) node [above] {$y$}; % l'axe des ordonnées
+			\draw [dotted, gray] (-4,-4) grid (16,10);
+
+			\coordinate (P) at (5, 4);
+			\coordinate (Q) at (10, 2);
+			\coordinate (R) at (7, 9);
+			\coordinate (S) at (12, 7);
+
+			\foreach \coordinate\n in {(P)/P, (Q)/Q, (R)/R, (S)/S}
+				{
+					\node[circle,inner sep=1pt,fill=black,label=above:\n] at \coordinate {};
+				}
+
+			\draw[->] (P) -- (Q);
+			\draw[->] (P) -- (R);
+			\draw[->, draw=red] (Q) -- (S);
+			\draw[->, draw=red] (R) -- (S);
+		\end{tikzpicture}
+	\end{center}
+\end{figure}
+
+\end{document}
