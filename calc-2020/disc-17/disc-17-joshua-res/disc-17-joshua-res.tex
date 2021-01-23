@@ -1,0 +1,144 @@
+% Font size, paper type
+\documentclass[12pt]{article}
+% Aesthetic margins
+\usepackage[margin=1in]{geometry}
+% Core math packages,
+% Mathtools loads amsmath, and amsmath gives basic math symbs
+% Amsfonts & amssymb are misc. symbols you might need
+\usepackage{mathtools, amsfonts, amssymb}
+% Links in a pdf
+\usepackage{hyperref}
+% Use in pictures, graphs, and figures
+\usepackage{graphicx}
+% Header package
+\usepackage{fancyhdr}
+% Underlining with line breaks
+\usepackage{ulem}
+% Adjust accordingly given warning messages
+\setlength{\headheight}{15pt}
+% So we can more easily format text with pictures
+\usepackage{float}
+% Images and drawing graphs
+\usepackage{tikz}
+
+% Sets footer
+\pagestyle{fancy}
+% Removes default footer style
+\fancyhf{}
+
+\rhead{
+  Shengdong Li
+  Calc 3
+}
+
+\rfoot{
+  Page \thepage{}
+}
+
+% Makes links look more appealing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% \usepackage{indentfirst}
+
+\begin{document}
+\title{Response to Joshua Ji}
+\author{by Shengdong Li}
+\date{22 January 2021}
+\maketitle
+
+\begin{align*}
+	\intertext{Hello Joshua! Looking over your initial post, I didn't see any mistakes, so I'm going to be trying to find and parametrize the line that runs between your two randomly generated vectors.}
+	\intertext{The first vector's beginning and endpoints were}
+	P & =\left(6,1\right) \\
+	Q & =\left(8,8\right) \\
+	\intertext{And it had a component form of}
+	  & <2,7>             \\
+	\intertext{The second vector's beginning and endpoints were }
+	P & =\left(1,8\right) \\
+	Q & =\left(8,6\right) \\
+	\intertext{And it had a component form of}
+	  & <9,5>             \\
+	\intertext{Graphing the component forms of the vectors would look something like this}
+\end{align*}
+\begin{figure}[H]
+	\begin{center}
+		\begin{tikzpicture}[x=0.4cm,y=0.4cm]
+			\draw[latex-latex, thin, draw=gray] (-4,0)--(16,0) node [right] {$x$}; % l'axe des abscisses
+			\draw[latex-latex, thin, draw=gray] (0,-4)--(0,10) node [above] {$y$}; % l'axe des ordonnées
+			\draw [dotted, gray] (-4,-4) grid (16,10);
+
+			\coordinate (P) at (0, 0);
+			\coordinate (Q) at (2, 6);
+			\coordinate (R) at (0, 0);
+			\coordinate (S) at (9, 5);
+
+			\foreach \coordinate\n in {(P)/P, (Q)/Q, (R)/R, (S)/S}
+				{
+					\node[circle,inner sep=1pt,fill=black] at \coordinate {};
+				}
+
+			\draw[->] (P) -- (Q);
+			% \draw[->] (P) -- (R);
+			% \draw[->] (Q) -- (S);
+			\draw[->] (R) -- (S);
+		\end{tikzpicture}
+	\end{center}
+\end{figure}
+\begin{align*}
+	\intertext{Finding the line between the two vectors is as easy as using the equation}
+	r               & =r_{0}+tv                \\
+	\intertext{Where \(r_0\) is the initial point }
+	r_{0}           & =<x_{0},y_{0}>           \\
+	\intertext{and \(v\) is the component form of the vector}
+	v               & =<a,b>                   \\
+	\intertext{I'm going to choose the direction of the line in between to go from the first vector (that has the highest slope) to the second vector}
+	\intertext{Because we know that the endpoint of your first randomly generated vertex is }
+	Q               & =\left(8,8\right)        \\
+	\intertext{The initial point \(r_0\) must therefore be equal to that point}
+	r_{0}           & =<8,8>                   \\
+	\intertext{And the component form of this line, must then be equal to the component form of the second minor subtracted by the first (kinda feels backwards but it is what it is)}
+	v               & =<9,5>-<2,7>             \\
+	                & =<7,-2>                  \\
+	\intertext{Now we can just plug these points into the formula for \(r\)}
+	r               & =<8,8>+t<7,-2>           \\
+	                & =<8,8>+<7t,-2t>          \\
+	                & =<7t+8,-2t+8>            \\
+	\intertext{From this we can extract our equations}
+	x               & =7t+8                    \\
+	y               & =-2t+8                   \\
+	r\left(t\right) & =\left(7t+8,-2t+8\right) \\
+\end{align*}
+\begin{figure}[H]
+	\begin{center}
+		\begin{tikzpicture}[x=0.4cm,y=0.4cm]
+			\draw[latex-latex, thin, draw=gray] (-4,0)--(16,0) node [right] {$x$}; % l'axe des abscisses
+			\draw[latex-latex, thin, draw=gray] (0,-4)--(0,10) node [above] {$y$}; % l'axe des ordonnées
+			\draw [dotted, gray] (-4,-4) grid (16,10);
+
+			\coordinate (P) at (0, 0);
+			\coordinate (Q) at (2, 6);
+			\coordinate (R) at (0, 0);
+			\coordinate (S) at (9, 5);
+      \coordinate (T) at (2, 6);
+      \coordinate (U) at (9, 5);
+
+			\foreach \coordinate\n in {(P)/P, (Q)/Q, (R)/R, (S)/S}
+				{
+					\node[circle,inner sep=1pt,fill=black] at \coordinate {};
+				}
+
+			\draw[->] (P) -- (Q);
+			% \draw[->] (P) -- (R);
+			% \draw[->] (Q) -- (S);
+			\draw[->] (R) -- (S);
+			\draw[->] (T) -- (U);
+		\end{tikzpicture}
+	\end{center}
+\end{figure}
+
+\end{document}

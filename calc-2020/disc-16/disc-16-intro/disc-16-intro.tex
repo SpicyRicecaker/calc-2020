@@ -117,7 +117,6 @@ Then calculating the components gives
 			-3 \\ -1
 		\end{bmatrix}}
 \end{align*}
-<<<<<<< HEAD
 \section{Creating a Square}
 Graphing the vector from problem 1 \(\vec{PQ}\) with points \(P\left(5, 4\right)\) and \(Q\left(10, 2\right)\) would look something like this:
 \begin{figure}[H]
@@ -205,31 +204,5 @@ This gives us the endpoints for both vector \(\vec{RS}\) and \(\vec{QS}\), resul
 			\draw[->, draw=red] (R) -- (S);
 		\end{tikzpicture}
 	\end{center}
-=======
-
-\section{Creating a Square}
-\begin{figure}[H]
-	\begin{tikzpicture}[x=0.4cm,y=0.4cm]
-		\draw[latex-latex, thin, draw=gray] (-4,0)--(16,0) node [right] {$x$}; % l'axe des abscisses
-		\draw[latex-latex, thin, draw=gray] (0,-4)--(0,10) node [above] {$y$}; % l'axe des ordonnées
-		\draw [dotted, gray] (-4,-4) grid (16,10);
-
-    \coordinate (P) at (5, 4);
-    \coordinate (Q) at (10, 2);
-    \coordinate (R) at (7, 9);
-    \coordinate (S) at (12, 7);
-    
-    \foreach \coordinate\n in {(P)/P, (Q)/Q, (R)/R, (S)/S}
-    {
-      \node[circle,inner sep=1pt,fill=black,label=above:\n] at \coordinate {};
-    }
-
-		\draw[->] (P) -- (Q);
-		\draw[->] (P) -- (R);
-		\draw[->] (Q) -- (S);
-		\draw[->] (R) -- (S);
-	\end{tikzpicture}
->>>>>>> dcd07546561df8ba725b20ffc65fd7a652c72b50
 \end{figure}
-
 \end{document}
